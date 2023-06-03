@@ -58,7 +58,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     long int totales = 0;
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
-    cpu_usage = (jiffies_to_msecs(cputime_to_jiffies(ktime_get())) / 10);
+    cpu_usage = (jiffies_to_msecs(clock_t_to_jiffies(ktime_get())) / 10);
     si_meminfo(&info);
 
     // total_mem = (info.totalram * info.mem_unit) >> 10;  // ! memoria total en MB
