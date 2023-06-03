@@ -103,14 +103,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     msleep(1000);
 
     jiffies_end = jiffies;
-
+    total_time = jiffies_end;
     unsigned long long total_time = 0;
     unsigned long long used_time = 0;
 
     // Traverse the task list to calculate total and used CPU time
     for_each_process(task)
     {
-        total_time += get_total_time(task);
+        // total_time += get_total_time(task);
         used_time += task->utime + task->stime;
     }
 
