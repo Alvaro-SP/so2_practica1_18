@@ -121,7 +121,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
         cpu_usage = (used_time_diff * 100) / total_time_diff;
     }
-
+    printk(KERN_INFO "total_time: %u%%\n", cpu_usage, "total_time_prev%ull%%\n", total_time_prev, "used_time%ull%%\n", used_time, "used_time_prev%ull%%\n", used_time_prev);
     printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
