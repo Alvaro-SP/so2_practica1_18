@@ -87,7 +87,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     unsigned long long total_time_prev = 0;
     unsigned long long used_time_prev = 0;
-    unsigned long long cpu_percent = 0;
+    unsigned int cpu_percent = 0;
     unsigned long long jiffies_start, jiffies_end;
 
     // jiffies_start = jiffies;
@@ -123,7 +123,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         cpu_percent = (used_time_diff * 100) / total_time_diff;
     }
 
-    printk(KERN_INFO "Real CPU Percent: %llu%%\n", cpu_percent);
+    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_percent);
 
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
