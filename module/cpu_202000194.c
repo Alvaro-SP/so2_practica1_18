@@ -44,19 +44,19 @@ MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
 MODULE_AUTHOR("Alvaro Emmanuel Socop Perez");
 
-// static unsigned long long get_total_time(struct task_struct *task)
-// {
-//     struct task_struct *child;
-//     unsigned long long total_time = task->utime + task->stime;
+static unsigned long long get_total_time(struct task_struct *task)
+{
+    struct task_struct *child;
+    unsigned long long total_time = task->utime + task->stime;
 
-//     // Traverse the child process list recursively
-//     list_for_each_entry(child, &task->children, sibling)
-//     {
-//         total_time += get_total_time(child);
-//     }
+    // Traverse the child process list recursively
+    list_for_each_entry(child, &task->children, sibling)
+    {
+        total_time += get_total_time(child);
+    }
 
-//     return total_time;
-// }
+    return total_time;
+}
 
 static int escribir_archivo(struct seq_file *archivo, void *v)
 {
@@ -92,14 +92,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // jiffies_start = jiffies;
     // total_time_prev = jiffies_start;
 
-    // for_each_process(task)
-    // {
-    //     total_time_prev += get_total_time(task);
-    //     used_time_prev += task->utime + task->stime;
-    // }
+    for_each_process(task)
+    {
+        total_time_prev += get_total_time(task);
+        used_time_prev += task->utime + task->stime;
+    }
 
     // Sleep for 1 second
-    // msleep(500);
+    msleep(500);
 
     jiffies_end = jiffies;
 
@@ -107,23 +107,22 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     unsigned long long used_time = 0;
 
     // Traverse the task list to calculate total and used CPU time
-    // for_each_process(task)
-    // {
-    //     total_time += get_total_time(task);
-    //     used_time += task->utime + task->stime;
-    // }
+    for_each_process(task)
+    {
+        total_time += get_total_time(task);
+        used_time += task->utime + task->stime;
+    }
 
     // Calculate the CPU percentage
-    // if (total_time > total_time_prev)
-    // {
-    //     unsigned long long total_time_diff = total_time - total_time_prev;
-    //     unsigned long long used_time_diff = used_time - used_time_prev;
+    if (total_time > total_time_prev)
+    {
+        unsigned long long total_time_diff = total_time - total_time_prev;
+        unsigned long long used_time_diff = used_time - used_time_prev;
 
-    //     cpu_usage = (used_time_diff * 100) / total_time_diff;
-    // }
+        cpu_usage = (used_time_diff * 100) / total_time_diff;
+    }
 
     printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
-    printk(KERN_INFO "HOLA MUNDO: ");
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
     si_meminfo(&info);
