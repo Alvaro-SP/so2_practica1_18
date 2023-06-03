@@ -90,8 +90,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     unsigned long long cpu_percent = 0;
     unsigned long long jiffies_start, jiffies_end;
 
-    jiffies_start = jiffies;
-    total_time_prev = jiffies_start;
+    // jiffies_start = jiffies;
+    // total_time_prev = jiffies_start;
+
+    for_each_process(task)
+    {
+        total_time_prev += get_total_time(task);
+        used_time_prev += task->utime + task->stime;
+    }
 
     // Sleep for 1 second
     msleep(1000);
