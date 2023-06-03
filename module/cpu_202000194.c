@@ -70,42 +70,26 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     long int totales = 0;
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
-    // cpu_usage = (jiffies_to_msecs(clock_t_to_jiffies(ktime_get())) / 10); no sirvio
-    int i, j;
-    u64 user, nice, system, idle, iowait, irq, softirq, steal;
-    u64 guest, guest_nice;
-    u64 sum = 0;
-    u64 sum_softirq = 0;
-    unsigned int per_softirq_sums[NR_SOFTIRQS] = {0};
-    struct timespec64 boottime;
 
-    user = nice = system = idle = iowait =
-        irq = softirq = steal = 0;
-    guest = guest_nice = 0;
-    getboottime64(&boottime);
-    /* shift boot timestamp according to the timens offset */
-    timens_add_boottime(&boottime);
+    unsigned long long total_time = 0;
+    unsigned long long idle_time = 0;
+    unsigned long long cpu_percent = 0;
 
-    for_each_possible_cpu(i)
+    // Traverse the task list to calculate total and idle CPU time
+    for_each_process(task)
     {
-        struct kernel_cpustat kcpustat;
-        u64 *cpustat = kcpustat.cpustat;
-
-        kcpustat_cpu_fetch(&kcpustat, i);
-
-        user += cpustat[CPUTIME_USER];
-        nice += cpustat[CPUTIME_NICE];
-        system += cpustat[CPUTIME_SYSTEM];
-        idle += get_idle_time(&kcpustat, i);
-        // iowait += get_iowait_time(&kcpustat, i);
-        irq += cpustat[CPUTIME_IRQ];
-        softirq += cpustat[CPUTIME_SOFTIRQ];
-        steal += cpustat[CPUTIME_STEAL];
-        guest += cpustat[CPUTIME_GUEST];
-        guest_nice += cpustat[CPUTIME_GUEST_NICE];
+        total_time += get_total_time(task);
+        if (task->state == TASK_IDLE)
+            idle_time += task->utime + task->stime;
     }
 
-    printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
+    // Calculate the CPU percentage
+    if (total_time > 0)
+        cpu_percent = ((total_time - idle_time) * 100) / total_time;
+
+    printk(KERN_INFO "CPU Percent: %llu%%\n", cpu_percent);
+
+    // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
     si_meminfo(&info);
 
@@ -216,6 +200,20 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "}");
 
     return 0;
+}
+
+static unsigned long long get_total_time(struct task_struct *task)
+{
+    struct task_struct *child;
+    unsigned long long total_time = task->utime + task->stime;
+
+    // Traverse the child process list recursively
+    list_for_each_entry(child, &task->children, sibling)
+    {
+        total_time += get_total_time(child);
+    }
+
+    return total_time;
 }
 
 // Funcion que se ejecuta cuando se le hace un cat al modulo.
