@@ -123,6 +123,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // }
 
     printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
+    printk(KERN_INFO "HOLA MUNDO: ");
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
     si_meminfo(&info);
