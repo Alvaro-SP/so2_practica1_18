@@ -27,16 +27,16 @@
 #include <linux/delay.h>
 
 // error:
-// #include <linux/cpumask.h>
-// #include <linux/fs.h>
-// #include <linux/interrupt.h>
-// #include <linux/kernel_stat.h>
-// #include <linux/sched/stat.h>
-// #include <linux/slab.h>
-// #include <linux/time_namespace.h>
-// #include <linux/irqnr.h>
-// #include <linux/sched/cputime.h>
-// #include <linux/tick.h>
+#include <linux/cpumask.h>
+#include <linux/fs.h>
+#include <linux/interrupt.h>
+#include <linux/kernel_stat.h>
+#include <linux/sched/stat.h>
+#include <linux/slab.h>
+#include <linux/time_namespace.h>
+#include <linux/irqnr.h>
+#include <linux/sched/cputime.h>
+#include <linux/tick.h>
 
 #define PROC_NAME "cpu_202000194"
 
@@ -92,11 +92,11 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // jiffies_start = jiffies;
     // total_time_prev = jiffies_start;
 
-    // for_each_process(task)
-    // {
-    //     total_time_prev += get_total_time(task);
-    //     used_time_prev += task->utime + task->stime;
-    // }
+    for_each_process(task)
+    {
+        total_time_prev += get_total_time(task);
+        used_time_prev += task->utime + task->stime;
+    }
 
     // Sleep for 1 second
     msleep(500);
@@ -106,22 +106,23 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     unsigned long long total_time = 0;
     unsigned long long used_time = 0;
 
-    // // Traverse the task list to calculate total and used CPU time
-    // for_each_process(task)
-    // {
-    //     total_time += get_total_time(task);
-    //     used_time += task->utime + task->stime;
-    // }
+    // Traverse the task list to calculate total and used CPU time
+    for_each_process(task)
+    {
+        total_time += get_total_time(task);
+        used_time += task->utime + task->stime;
+    }
 
-    // // Calculate the CPU percentage
-    // if (total_time > total_time_prev)
-    // {
-    //     unsigned long long total_time_diff = total_time - total_time_prev;
-    //     unsigned long long used_time_diff = used_time - used_time_prev;
+    // Calculate the CPU percentage
+    if (total_time > total_time_prev)
+    {
+        unsigned long long total_time_diff = total_time - total_time_prev;
+        unsigned long long used_time_diff = used_time - used_time_prev;
 
-    //     cpu_usage = (used_time_diff * 100) / total_time_diff;
-    // }
+        cpu_usage = (used_time_diff * 100) / total_time_diff;
+    }
 
+    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
     si_meminfo(&info);
@@ -231,7 +232,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "\"totales\":");
     seq_printf(archivo, "%li  \n", totales);
     seq_printf(archivo, "}");
-    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
 
     return 0;
 }
