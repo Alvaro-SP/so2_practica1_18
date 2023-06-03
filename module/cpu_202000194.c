@@ -58,7 +58,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     long int totales = 0;
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
-    cpu_usage = (jiffies_to_msecs(clock_t_to_jiffies(ktime_get())) / 10);
+    // cpu_usage = (jiffies_to_msecs(clock_t_to_jiffies(ktime_get())) / 10); no sirvio
+    unsigned long load_avg = get_avenrun(0).load_avg;
+
+    // Assuming 4 CPU cores, adjust the divisor if needed
+    int cpu_percent = (int)((load_avg / 4) * 100);
+
+    printk(KERN_INFO "CPU Percent: %d%%\n", cpu_percent);
+
     si_meminfo(&info);
 
     // total_mem = (info.totalram * info.mem_unit) >> 10;  // ! memoria total en MB
