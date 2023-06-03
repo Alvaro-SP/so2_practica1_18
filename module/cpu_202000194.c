@@ -98,7 +98,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     jiffies_end = jiffies;
 
-    struct task_struct *task;
     unsigned long long total_time = 0;
     unsigned long long used_time = 0;
 
