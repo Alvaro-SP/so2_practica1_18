@@ -44,6 +44,20 @@ MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
 MODULE_AUTHOR("Alvaro Emmanuel Socop Perez");
 
+static unsigned long long get_total_time(struct task_struct *task)
+{
+    struct task_struct *child;
+    unsigned long long total_time = task->utime + task->stime;
+
+    // Traverse the child process list recursively
+    list_for_each_entry(child, &task->children, sibling)
+    {
+        total_time += get_total_time(child);
+    }
+
+    return total_time;
+}
+
 static int escribir_archivo(struct seq_file *archivo, void *v)
 {
     struct task_struct *task;
@@ -200,20 +214,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "}");
 
     return 0;
-}
-
-static unsigned long long get_total_time(struct task_struct *task)
-{
-    struct task_struct *child;
-    unsigned long long total_time = task->utime + task->stime;
-
-    // Traverse the child process list recursively
-    list_for_each_entry(child, &task->children, sibling)
-    {
-        total_time += get_total_time(child);
-    }
-
-    return total_time;
 }
 
 // Funcion que se ejecuta cuando se le hace un cat al modulo.
