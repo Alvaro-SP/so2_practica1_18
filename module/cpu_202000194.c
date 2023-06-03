@@ -37,15 +37,6 @@
 #include <linux/irqnr.h>
 #include <linux/sched/cputime.h>
 #include <linux/tick.h>
-//
-#ifndef arch_irq_stat_cpu
-#define arch_irq_stat_cpu(cpu) 0
-#endif
-#ifndef arch_irq_stat
-#define arch_irq_stat() 0
-#endif
-
-#ifdef arch_idle_time
 
 #define PROC_NAME "cpu_202000194"
 
@@ -112,16 +103,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         steal += cpustat[CPUTIME_STEAL];
         guest += cpustat[CPUTIME_GUEST];
         guest_nice += cpustat[CPUTIME_GUEST_NICE];
-        sum += kstat_cpu_irqs_sum(i);
-        sum += arch_irq_stat_cpu(i);
-
-        for (j = 0; j < NR_SOFTIRQS; j++)
-        {
-            unsigned int softirq_stat = kstat_softirqs_cpu(j, i);
-
-            per_softirq_sums[j] += softirq_stat;
-            sum_softirq += softirq_stat;
-        }
     }
 
     printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
