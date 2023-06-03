@@ -4,4 +4,4 @@ ruta=$(pwd)
 cd $ruta
 cat /proc/cpu_202000194
 cat /proc/ram_202000194
-bash eje.sh
+bash ciclo.sh
