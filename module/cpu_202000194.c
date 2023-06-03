@@ -85,23 +85,40 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
 
-    unsigned long long total_time = 0;
-    unsigned long long idle_time = 0;
+    unsigned long long total_time_prev = 0;
+    unsigned long long used_time_prev = 0;
     unsigned long long cpu_percent = 0;
+    unsigned long long jiffies_start, jiffies_end;
 
-    // Traverse the task list to calculate total and idle CPU time
+    jiffies_start = jiffies;
+    total_time_prev = jiffies_start;
+
+    // Sleep for 1 second
+    msleep(1000);
+
+    jiffies_end = jiffies;
+
+    struct task_struct *task;
+    unsigned long long total_time = 0;
+    unsigned long long used_time = 0;
+
+    // Traverse the task list to calculate total and used CPU time
     for_each_process(task)
     {
         total_time += get_total_time(task);
-        if (task->state == TASK_IDLE)
-            idle_time += task->utime + task->stime;
+        used_time += task->utime + task->stime;
     }
 
     // Calculate the CPU percentage
-    if (total_time > 0)
-        cpu_percent = ((total_time - idle_time) * 100) / total_time;
+    if (total_time > total_time_prev)
+    {
+        unsigned long long total_time_diff = total_time - total_time_prev;
+        unsigned long long used_time_diff = used_time - used_time_prev;
 
-    printk(KERN_INFO "CPU Percent: %llu%%\n", cpu_percent);
+        cpu_percent = (used_time_diff * 100) / total_time_diff;
+    }
+
+    printk(KERN_INFO "Real CPU Percent: %llu%%\n", cpu_percent);
 
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
