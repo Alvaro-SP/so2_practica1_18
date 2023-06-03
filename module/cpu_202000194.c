@@ -84,7 +84,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     long int totales = 0;
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
-
+    // ? https://www.anshulpatel.in/posts/linux_cpu_percentage/
     unsigned long long total_time_prev = 0;
     unsigned long long used_time_prev = 0;
     unsigned long long jiffies_start, jiffies_end;
