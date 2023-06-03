@@ -26,6 +26,27 @@
 #include <linux/uidgid.h>
 #include <linux/delay.h>
 
+// error:
+#include <linux/cpumask.h>
+#include <linux/fs.h>
+#include <linux/interrupt.h>
+#include <linux/kernel_stat.h>
+#include <linux/sched/stat.h>
+#include <linux/slab.h>
+#include <linux/time_namespace.h>
+#include <linux/irqnr.h>
+#include <linux/sched/cputime.h>
+#include <linux/tick.h>
+//
+#ifndef arch_irq_stat_cpu
+#define arch_irq_stat_cpu(cpu) 0
+#endif
+#ifndef arch_irq_stat
+#define arch_irq_stat() 0
+#endif
+
+#ifdef arch_idle_time
+
 #define PROC_NAME "cpu_202000194"
 
 MODULE_LICENSE("GPL");
@@ -72,7 +93,8 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     guest = guest_nice = 0;
     getboottime64(&boottime);
     /* shift boot timestamp according to the timens offset */
-    ktime_get_boottime();
+    timens_sub_boottime(&boottime);
+
     for_each_possible_cpu(i)
     {
         struct kernel_cpustat kcpustat;
@@ -84,7 +106,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         nice += cpustat[CPUTIME_NICE];
         system += cpustat[CPUTIME_SYSTEM];
         idle += get_idle_time(&kcpustat, i);
-        // iowait += get_iowait_time(&kcpustat, i);
+        iowait += get_iowait_time(&kcpustat, i);
         irq += cpustat[CPUTIME_IRQ];
         softirq += cpustat[CPUTIME_SOFTIRQ];
         steal += cpustat[CPUTIME_STEAL];
@@ -92,6 +114,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         guest_nice += cpustat[CPUTIME_GUEST_NICE];
         sum += kstat_cpu_irqs_sum(i);
         sum += arch_irq_stat_cpu(i);
+
+        for (j = 0; j < NR_SOFTIRQS; j++)
+        {
+            unsigned int softirq_stat = kstat_softirqs_cpu(j, i);
+
+            per_softirq_sums[j] += softirq_stat;
+            sum_softirq += softirq_stat;
+        }
     }
 
     printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
