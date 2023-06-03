@@ -27,16 +27,16 @@
 #include <linux/delay.h>
 
 // error:
-#include <linux/cpumask.h>
-#include <linux/fs.h>
-#include <linux/interrupt.h>
-#include <linux/kernel_stat.h>
-#include <linux/sched/stat.h>
-#include <linux/slab.h>
-#include <linux/time_namespace.h>
-#include <linux/irqnr.h>
-#include <linux/sched/cputime.h>
-#include <linux/tick.h>
+// #include <linux/cpumask.h>
+// #include <linux/fs.h>
+// #include <linux/interrupt.h>
+// #include <linux/kernel_stat.h>
+// #include <linux/sched/stat.h>
+// #include <linux/slab.h>
+// #include <linux/time_namespace.h>
+// #include <linux/irqnr.h>
+// #include <linux/sched/cputime.h>
+// #include <linux/tick.h>
 
 #define PROC_NAME "cpu_202000194"
 
