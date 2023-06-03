@@ -87,7 +87,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     unsigned long long total_time_prev = 0;
     unsigned long long used_time_prev = 0;
-    unsigned int cpu_percent = 0;
     unsigned long long jiffies_start, jiffies_end;
 
     // jiffies_start = jiffies;
@@ -120,10 +119,8 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         unsigned long long total_time_diff = total_time - total_time_prev;
         unsigned long long used_time_diff = used_time - used_time_prev;
 
-        cpu_percent = (used_time_diff * 100) / total_time_diff;
+        cpu_usage = (used_time_diff * 100) / total_time_diff;
     }
-
-    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_percent);
 
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
@@ -136,6 +133,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "{\n");
     seq_printf(archivo, "\"cpu_usage\":"); //* "cpu_usage": 25.35,
     seq_printf(archivo, "%lu , \n", cpu_usage);
+    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
     seq_printf(archivo, "\"data\": {"); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task)
     {
