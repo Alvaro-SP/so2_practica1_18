@@ -14,5 +14,5 @@ cat /proc/cpu_202000194
 cat /proc/ram_202000194
 
 # ! EJECUTAR EN LA VM GCP
-cd "/home/alvaro24_ingenieria/so2_practica1_18/module"
-bash eje.sh
+# cd "/home/alvaro24_ingenieria/so2_practica1_18/module"
+# bash eje.sh
