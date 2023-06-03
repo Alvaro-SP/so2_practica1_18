@@ -1,0 +1,358 @@
+{
+  "cpu_usage": 20,
+  "data": [
+    {
+      "id": "0_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 1,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 101,
+          "ram": 11,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 102,
+          "ram": 12,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "1_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 2,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 201,
+          "ram": 21,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 202,
+          "ram": 22,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "2_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 3,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 301,
+          "ram": 31,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 302,
+          "ram": 32,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "3_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 4,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 401,
+          "ram": 41,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 402,
+          "ram": 42,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "4_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 5,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 501,
+          "ram": 51,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 502,
+          "ram": 52,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "5_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 6,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 601,
+          "ram": 61,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 602,
+          "ram": 62,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "6_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 7,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 701,
+          "ram": 71,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 702,
+          "ram": 72,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "7_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 8,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 801,
+          "ram": 81,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 802,
+          "ram": 82,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "8_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 9,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 901,
+          "ram": 91,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 902,
+          "ram": 92,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "9_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 10,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1001,
+          "ram": 101,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1002,
+          "ram": 102,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "10_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 11,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1101,
+          "ram": 111,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1102,
+          "ram": 112,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "11_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 12,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1201,
+          "ram": 121,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1202,
+          "ram": 122,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "12_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 13,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1301,
+          "ram": 131,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1302,
+          "ram": 132,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "13_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 14,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1401,
+          "ram": 141,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1402,
+          "ram": 142,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "14_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 15,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1501,
+          "ram": 151,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1502,
+          "ram": 152,
+          "usuario": "usuario1"
+        }
+      ]
+    },
+    {
+      "id": "15_systemd",
+      "estado": 1,
+      "nombre": "systemd",
+      "pid": 16,
+      "procesoshijos": [
+        {
+          "estado": 0,
+          "nombre": "proceso hijo 0",
+          "pid": 1601,
+          "ram": 161,
+          "usuario": "usuario0"
+        },
+        {
+          "estado": 1,
+          "nombre": "proceso hijo 1",
+          "pid": 1602,
+          "ram": 162,
+          "usuario": "usuario1"
+        }
+      ]
+    }
+  ]
+}
+
