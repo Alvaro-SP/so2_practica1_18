@@ -71,7 +71,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     char *strstate = ""; // variable para guardar el estado del proceso
     char buffer[256];
     int len;
-    long cpu_usage = 20;
+    long cpu_usage = 0;
     struct sysinfo info;
     long mem_usage;
     bool first = true; // solo para el primer proceso la coma
@@ -133,7 +133,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "{\n");
     seq_printf(archivo, "\"cpu_usage\":"); //* "cpu_usage": 25.35,
     seq_printf(archivo, "%lu , \n", cpu_usage);
-    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
     seq_printf(archivo, "\"data\": {"); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task)
     {
@@ -232,6 +231,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "\"totales\":");
     seq_printf(archivo, "%li  \n", totales);
     seq_printf(archivo, "}");
+    printk(KERN_INFO "Real CPU Percent: %u%%\n", cpu_usage);
 
     return 0;
 }
