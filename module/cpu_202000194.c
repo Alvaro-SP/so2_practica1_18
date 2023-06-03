@@ -59,10 +59,40 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
     // cpu_usage = (jiffies_to_msecs(clock_t_to_jiffies(ktime_get())) / 10); no sirvio
-    unsigned long load_avg = get_avenrun(0).load_avg;
+    int i, j;
+    u64 user, nice, system, idle, iowait, irq, softirq, steal;
+    u64 guest, guest_nice;
+    u64 sum = 0;
+    u64 sum_softirq = 0;
+    unsigned int per_softirq_sums[NR_SOFTIRQS] = {0};
+    struct timespec64 boottime;
 
-    // Assuming 4 CPU cores, adjust the divisor if needed
-    int cpu_percent = (int)((load_avg / 4) * 100);
+    user = nice = system = idle = iowait =
+        irq = softirq = steal = 0;
+    guest = guest_nice = 0;
+    getboottime64(&boottime);
+    /* shift boot timestamp according to the timens offset */
+    timens_sub_boottime(&boottime);
+    for_each_possible_cpu(i)
+    {
+        struct kernel_cpustat kcpustat;
+        u64 *cpustat = kcpustat.cpustat;
+
+        kcpustat_cpu_fetch(&kcpustat, i);
+
+        user += cpustat[CPUTIME_USER];
+        nice += cpustat[CPUTIME_NICE];
+        system += cpustat[CPUTIME_SYSTEM];
+        idle += get_idle_time(&kcpustat, i);
+        iowait += get_iowait_time(&kcpustat, i);
+        irq += cpustat[CPUTIME_IRQ];
+        softirq += cpustat[CPUTIME_SOFTIRQ];
+        steal += cpustat[CPUTIME_STEAL];
+        guest += cpustat[CPUTIME_GUEST];
+        guest_nice += cpustat[CPUTIME_GUEST_NICE];
+        sum += kstat_cpu_irqs_sum(i);
+        sum += arch_irq_stat_cpu(i);
+    }
 
     printk(KERN_INFO "CPU Percent: %d%%\n", cpu_percent);
 
