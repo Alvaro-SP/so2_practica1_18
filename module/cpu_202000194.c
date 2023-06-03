@@ -72,7 +72,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     guest = guest_nice = 0;
     getboottime64(&boottime);
     /* shift boot timestamp according to the timens offset */
-    ktime_get_boottime(&boottime);
+    ktime_get_boottime();
     for_each_possible_cpu(i)
     {
         struct kernel_cpustat kcpustat;
