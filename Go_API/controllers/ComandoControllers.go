@@ -34,7 +34,6 @@ func RequestPrincipal() http.HandlerFunc {
 				var dataJson Models.CPUDATAJSON
 				json.Unmarshal(salida.Bytes(), &dataJson) //json a objeto
 				json.NewEncoder(rw).Encode(dataJson)
-				fmt.Println(dataJson)
 		}
 	}
 }
