@@ -5,7 +5,7 @@ type PROCESOPADRE struct {
 	ESTADO        string        `json:"estado"`
 	NOMBRE        string        `json:"nombre"`
 	PID           int           `json:"pid"`
-	PROCESOSHIJOS []PROCESOHIJO `json:"procesos_hijo"`
+	PROCESOSHIJOS []PROCESOHIJO `json:"procesoshijos"`
 	RAM           int           `json:"ram"`
 	USUARIO       string        `json:"usuario"`
 }
