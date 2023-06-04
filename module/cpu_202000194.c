@@ -97,8 +97,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // Sleep for 1 second
     msleep(500);
 
-    jiffies_end = jiffies;
-
     long total_time = 0;
     long used_time = 0;
 
