@@ -85,12 +85,8 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
     // ? https://www.anshulpatel.in/posts/linux_cpu_percentage/
-    unsigned long long total_time_prev = 0;
-    unsigned long long used_time_prev = 0;
-    unsigned long long jiffies_start, jiffies_end;
-
-    // jiffies_start = jiffies;
-    // total_time_prev = jiffies_start;
+    long total_time_prev = 0;
+    long used_time_prev = 0;
 
     for_each_process(task)
     {
@@ -103,8 +99,8 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     jiffies_end = jiffies;
 
-    unsigned long long total_time = 0;
-    unsigned long long used_time = 0;
+    long total_time = 0;
+    long used_time = 0;
 
     // Traverse the task list to calculate total and used CPU time
     for_each_process(task)
@@ -116,8 +112,20 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // Calculate the CPU percentage
     if (total_time > total_time_prev)
     {
-        unsigned long long total_time_diff = total_time - total_time_prev;
-        unsigned long long used_time_diff = used_time - used_time_prev;
+        long total_time_diff; //= total_time - total_time_prev;
+        if (total_time - total_time_prev < 0)
+        {
+            total_time_diff = total_time_prev - total_time;
+        }
+        else
+        {
+            total_time_diff = total_time - total_time_prev;
+        }
+        long used_time_diff = used_time - used_time_prev;
+        if (used_time_diff < 0)
+        {
+            used_time_diff = used_time_diff * -1;
+        }
 
         cpu_usage = (used_time_diff * 100) / total_time_diff;
     }
@@ -264,3 +272,53 @@ module_init(_insert);
 module_exit(_remove);
 
 // https://stackoverflow.com/questions/33594124/why-is-the-process-state-in-task-struct-stored-as-type-long
+
+// [ 1445.884331] cpu_usage: 14%
+
+// , total_time: 1653119335%
+//     total_time_prev: 2176183945%
+// used_time: 2977750707%
+// used_time_prev: 2421764609%
+
+// unsigned long long total_time_diff = 1653119335 - 2176183945;  //-523064610
+// unsigned long long used_time_diff = 2977750707 - 2421764609; //555986098
+
+// cpu_usage = (used_time_diff * 100) / total_time_diff;
+
+//  (555986098) /-523064610
+// }
+
+// cpu_usage: 14%
+// , total_time: 30369118%
+//     total_time_prev: 629754363%
+// used_time: 282519364%
+// used_time_prev: 4049546367%
+
+// cpu_usage = ((used_time - used_time_prev)) * 100) / (total_time - total_time_prev);
+
+// unsigned long long total_time_diff = 30369118 - 629754363; //-599385245
+// unsigned long long used_time_diff = 282519364 - 4049546367; //-3767027003
+
+// cpu_usage = (used_time_diff * 100) / total_time_diff;
+
+// cpu_usage: 14%
+//                , total_time: 3003355418%
+//                  total_time_prev: 3527540691%
+//                 used_time: 1321928496%
+//                 used_time_prev: 774115303%
+
+// unsigned long long total_time_diff = 3003355418 - 3527540691; //-524185273
+// unsigned long long used_time_diff = 1321928496 - 774115303; //-547812193
+
+// cpu_usage = (-547812193 * 100) / -524185273; //104.5
+
+// cpu_usage: 14%
+//                , total_time: 1653119335%
+//                  total_time_prev: 2176183945%
+//                 used_time: 2977750707%
+//                 used_time_prev: 2421764609%
+
+// unsigned long long total_time_diff = 1653119335 - 2176183945; //-523064610
+// unsigned long long used_time_diff = 2977750707 - 2421764609; //555986098
+
+// cpu_usage = (523064610 * 100) / 555986098; //94.1
