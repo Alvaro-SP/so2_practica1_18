@@ -33,5 +33,5 @@ type DATAJSONMEMORY struct {
 	BUFFER        int    `json:"buffer"`
 	CACHE         int    `json:"cache"`
 	MEM_UNIT      int    `json:"mem_unit"`
+	PORCENTAJE    int    `json:"porcentaje"`
 }
-
