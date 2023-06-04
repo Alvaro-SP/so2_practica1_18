@@ -27,14 +27,14 @@ func RequestPrincipal() http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 
 		salida, _, verificar := CMD("cat /proc/cpu_grupo18")
-		fmt.Println(salida)
-
+		
 		if verificar != nil {
 			log.Printf("error: %v\n", verificar)
-		} else {
-			var dataJson Models.CPUDATAJSON
-			json.Unmarshal(salida.Bytes(), &dataJson) //json a objeto
-			json.NewEncoder(rw).Encode(dataJson)
+			} else {
+				var dataJson Models.CPUDATAJSON
+				json.Unmarshal(salida.Bytes(), &dataJson) //json a objeto
+				json.NewEncoder(rw).Encode(dataJson)
+				fmt.Println(dataJson)
 		}
 	}
 }
