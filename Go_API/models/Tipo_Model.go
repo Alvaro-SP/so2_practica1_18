@@ -1,7 +1,7 @@
 package Models
 
 type PROCESOPADRE struct {
-	ID            string        `json:"pid"`
+	ID            string        `json:"id"`
 	ESTADO        string        `json:"estado"`
 	NOMBRE        string        `json:"nombre"`
 	PID           int           `json:"pid"`
@@ -19,8 +19,13 @@ type PROCESOHIJO struct {
 }
 
 type CPUDATAJSON struct {
-  CPU_USAGE     string `json:cpu_usage`
+  	CPU_USAGE     int `json:cpu_usage`
 	DATA          []PROCESOPADRE
+	Ejecucion 	int		"json:ejecucion"
+    Zombie 		int		"json:zombie"
+    Detenido 	int		"json:detenido"
+    Suspendid 	int		"json:suspendido"
+    Totales 	int		"json:totales"
 }
 
 type DATAJSONCPU struct {
