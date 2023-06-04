@@ -1,6 +1,6 @@
 {
   "cpu_usage": 20,
-  "data": [
+  "DATA": [
     {
       "id": "0_systemd",
       "estado": 1,
@@ -353,6 +353,10 @@
         }
       ]
     }
-  ]
+  ],
+  "detenido":28,
+  "ejecucion":10,
+  "totales":100,
+  "suspendido":16,
+  "zombie":0
 }
-

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Table.css";
 
+const API = import.meta.env.VITE_API 
 export function ProcessTable({ data }) {
   return (
     <table>
@@ -31,6 +32,12 @@ export function ParentRow(
     setIsExpanded(!isExpanded);
   };
 
+  const sendKill = ()=>{
+    console.log(pid)
+    fetch(`${API}Kill?pid=${pid}`)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
   return (
     <>
       <tr
@@ -42,9 +49,9 @@ export function ParentRow(
         <td>{usuario}</td>
         <td>{estado}</td>
         <td>{ram / 1000} %</td>
-        <td><button  className={"btn-kill"}>Kill</button></td>
+        <td><button onClick={sendKill} className={"btn-kill"}>Kill</button></td>
       </tr>
-      {isExpanded && procesoshijos.map((value) => <ChildRow {...value} />)}
+      {isExpanded && procesoshijos && procesoshijos.map((value) => <ChildRow {...value} />)}
     </>
   );
 }
