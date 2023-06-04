@@ -127,7 +127,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
         cpu_usage = (used_time_diff * 100) / total_time_diff;
     }
-    printk(KERN_INFO "cpu_usage: %u%%\n, total_time: %ull%%\n  total_time_prev: %ull%%\n used_time: %ull%%\n used_time_prev: %ull%%\n", cpu_usage, total_time, total_time_prev, used_time, used_time_prev);
+    printk(KERN_INFO "cpu_usage: %ld%%\n, total_time: %ld%%\n  total_time_prev: %ld%%\n used_time: %ld%%\n used_time_prev: %ld%%\n", cpu_usage, total_time, total_time_prev, used_time, used_time_prev);
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
     si_meminfo(&info);
@@ -138,7 +138,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // printk(KERN_INFO "Total memory: %lu MB\n", (memoria_total/1000000));
     seq_printf(archivo, "{\n");
     seq_printf(archivo, "\"cpu_usage\":"); //* "cpu_usage": 25.35,
-    seq_printf(archivo, "%lu , \n", cpu_usage);
+    seq_printf(archivo, "%ld , \n", cpu_usage);
     seq_printf(archivo, "\"data\": {"); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task)
     {
