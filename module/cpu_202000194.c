@@ -107,10 +107,11 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         used_time += task->utime + task->stime;
     }
 
+    long total_time_diff; //= total_time - total_time_prev;
+    long used_time_diff;
     // Calculate the CPU percentage
     if (total_time > total_time_prev)
     {
-        long total_time_diff; //= total_time - total_time_prev;
         if (total_time < total_time_prev)
         {
             total_time_diff = total_time_prev - total_time;
@@ -119,7 +120,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         {
             total_time_diff = total_time - total_time_prev;
         }
-        long used_time_diff;
         if (used_time < used_time_prev)
         {
             used_time_diff = used_time_prev - used_time;
