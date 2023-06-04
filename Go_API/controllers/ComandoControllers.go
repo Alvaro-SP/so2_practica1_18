@@ -48,13 +48,13 @@ func RequestKill() http.HandlerFunc {
 			id := r.URL.Query().Get("pid")
 			id = strings.TrimSuffix(id, "/")
       fmt.Println(id)
-			/*  _, _, verificar := CMD("sudo kill -9 " + id)
+			  _, _, verificar := CMD("sudo kill -9 " + id)
 
 			if verificar != nil {
 				log.Printf("error: %v\n", verificar)
 			} else {
 				fmt.Println("Eliminando Proceso: " + id)
-			} */
+			} 
     }else{
 			rw.WriteHeader(http.StatusNotImplemented)
 			rw.Write([]byte(http.StatusText(http.StatusNotImplemented)))
@@ -92,7 +92,7 @@ func RequestCPU() http.HandlerFunc {
 }
 func RequestMemory() http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
-		salida, _, verificar := CMD("cat /proc/ram_grupo5")
+		salida, _, verificar := CMD("cat /proc/mem_grupo18")
 
 		if verificar != nil {
 			log.Printf("error: %v\n", verificar)
