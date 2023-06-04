@@ -44,7 +44,7 @@ func RequestKill() http.HandlerFunc {
 			http.NotFound(rw, r)
 			return
 		}
-		if  r.Method =="POST" {
+		if  r.Method =="GET" {
 			id := r.URL.Query().Get("pid")
 			id = strings.TrimSuffix(id, "/")
       fmt.Println(id)
