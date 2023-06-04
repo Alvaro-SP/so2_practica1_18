@@ -7,6 +7,8 @@
 
 #include <linux/mm.h> //total ram
 
+#define PROC_NAME "mem_grupo18"
+
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Grupo18");
 MODULE_DESCRIPTION("Memory");
@@ -62,14 +64,14 @@ static struct proc_ops operations =
 static int iniciar_init(void)
 {
     proc_create("mem_grupo18", 0, NULL, &operations);
-    printk(KERN_INFO "Módulo RAM del Grupo5 Cargado\n");
+    printk(KERN_INFO "Hola mundo, somos el grupo 18 y este es el monitor de memoria\n");
     return 0; // 0 = ERROR DE CARGA
 }
 
 static void finalizar_end(void)
 {
     remove_proc_entry("mem_grupo18", NULL);
-    printk(KERN_INFO "Módulo RAM del Grupo5 Desmontado\n");
+    printk(KERN_INFO "Sayonara mundo, somos el grupo 18 y este fue el monitor de memoria\n");
 }
 
 module_init(iniciar_init);

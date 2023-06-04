@@ -38,11 +38,11 @@
 #include <linux/sched/cputime.h>
 #include <linux/tick.h>
 
-#define PROC_NAME "cpu_202000194"
+#define PROC_NAME "cpu_grupo18"
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
-MODULE_AUTHOR("Alvaro Emmanuel Socop Perez");
+MODULE_AUTHOR("Grupo 18");
 
 static unsigned long long get_total_time(struct task_struct *task)
 {
@@ -145,7 +145,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "{\n");
     seq_printf(archivo, "\"cpu_usage\":"); //* "cpu_usage": 25.35,
     seq_printf(archivo, "%ld , \n", cpu_usage);
-    seq_printf(archivo, "\"data\": {"); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
+    seq_printf(archivo, "\"data\": ["); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task)
     {
         if (!first)
@@ -187,7 +187,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         /* Get the passwd structure for the UID */
         // char *nombre_usuario = get_cred_username(task->real_cred);
 
-        seq_printf(archivo, "\"%d_%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
+        seq_printf(archivo, "{\"id\": %d_%s,\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
                    indext,
                    task->comm,
                    task->pid,
@@ -227,7 +227,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         first = false;
     }
 
-    seq_printf(archivo, "}, \n");
+    seq_printf(archivo, "], \n");
     seq_printf(archivo, "\"ejecucion\":");
     seq_printf(archivo, "%li , \n", ejecucion);
 
@@ -261,15 +261,15 @@ static struct proc_ops operaciones =
 
 static int _insert(void)
 {
-    proc_create("cpu_202000194", 0, NULL, &operaciones);
-    printk(KERN_INFO "Hola mundo, somos el grupo 18 y este es el monitor de memoria\n");
+    proc_create("cpu_grupo18", 0, NULL, &operaciones);
+    printk(KERN_INFO "Hola mundo, somos el grupo 18 y este es el monitor de CPU\n");
     return 0;
 }
 
 static void _remove(void)
 {
-    remove_proc_entry("cpu_202000194", NULL);
-    printk(KERN_INFO "Sayonara mundo, somos el grupo 18 y este fue el monitor de memoria\n");
+    remove_proc_entry("cpu_grupo18", NULL);
+    printk(KERN_INFO "Sayonara mundo, somos el grupo 18 y este fue el monitor de CPU\n");
 }
 
 module_init(_insert);
