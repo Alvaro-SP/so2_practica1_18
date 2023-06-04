@@ -262,14 +262,14 @@ static struct proc_ops operaciones =
 static int _insert(void)
 {
     proc_create("cpu_202000194", 0, NULL, &operaciones);
-    printk(KERN_INFO "202000194\n");
+    printk(KERN_INFO "Hola mundo, somos el grupo 18 y este es el monitor de memoria\n");
     return 0;
 }
 
 static void _remove(void)
 {
     remove_proc_entry("cpu_202000194", NULL);
-    printk(KERN_INFO "Sistemas Operativos 1\n");
+    printk(KERN_INFO "Sayonara mundo, somos el grupo 18 y este fue el monitor de memoria\n");
 }
 
 module_init(_insert);
