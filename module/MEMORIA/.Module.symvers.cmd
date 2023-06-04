@@ -1,0 +1,1 @@
+cmd_/home/daniel/Usac/SO2/SO1-Proyecto1_G5/monitoreo/MODULE/MEMORIA/Module.symvers := sed 's/ko$$/o/' /home/daniel/Usac/SO2/SO1-Proyecto1_G5/monitoreo/MODULE/MEMORIA/modules.order | scripts/mod/modpost -m -a  -o /home/daniel/Usac/SO2/SO1-Proyecto1_G5/monitoreo/MODULE/MEMORIA/Module.symvers -e -i Module.symvers   -T -

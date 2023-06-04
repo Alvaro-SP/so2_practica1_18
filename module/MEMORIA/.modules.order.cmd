@@ -1,0 +1,1 @@
+cmd_/home/daniel/Usac/SO2/SO1-Proyecto1_G5/monitoreo/MODULE/MEMORIA/modules.order := {   echo /home/daniel/Usac/SO2/SO1-Proyecto1_G5/monitoreo/MODULE/MEMORIA/ram_grupo5.ko; :; } | awk '!x[$$0]++' - > /home/daniel/Usac/SO2/SO1-Proyecto1_G5/monitoreo/MODULE/MEMORIA/modules.order
