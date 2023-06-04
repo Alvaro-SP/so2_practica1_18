@@ -67,6 +67,7 @@ function App() {
           suspendidos={procesos.Suspendid}
           detenidos={procesos.Detenido}
           zombies={procesos.Zombie}
+          CPU_uso={procesos.CPU_USAGE}
         />
         <h3>Tabla de procesos</h3>
         <ProcessTable data={procesos.DATA} />
