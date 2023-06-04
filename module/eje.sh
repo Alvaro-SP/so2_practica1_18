@@ -15,6 +15,7 @@ cat /proc/mem_grupo18
 
 # ! EJECUTAR EN LA VM GCP
 # cd "/home/alvaro24_ingenieria/so2_practica1_18/module"
+# cd "/home/alvaro24_ingenieria/so2_practica1_18/Go_API"
 # bash eje.sh
 
 # ! EJECUTAR STRESS

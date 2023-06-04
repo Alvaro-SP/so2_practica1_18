@@ -27,7 +27,7 @@ func RequestPrincipal() http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 
 		salida, _, verificar := CMD("cat /proc/cpu_grupo18")
-		fmt.Println("hola")
+		fmt.Println(salida)
 
 		if verificar != nil {
 			log.Printf("error: %v\n", verificar)
