@@ -111,7 +111,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     if (total_time > total_time_prev)
     {
         long total_time_diff; //= total_time - total_time_prev;
-        if (total_time - total_time_prev < 0)
+        if (total_time < total_time_prev)
         {
             total_time_diff = total_time_prev - total_time;
         }
@@ -119,15 +119,21 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         {
             total_time_diff = total_time - total_time_prev;
         }
-        long used_time_diff = used_time - used_time_prev;
-        if (used_time_diff < 0)
+        long used_time_diff;
+        if (used_time < used_time_prev)
         {
-            used_time_diff = used_time_diff * -1;
+            used_time_diff = used_time_prev - used_time;
+        }
+        else
+        {
+            used_time_diff = used_time - used_time_prev;
         }
 
         cpu_usage = (used_time_diff * 100) / total_time_diff;
     }
     printk(KERN_INFO "cpu_usage: %ld%%\n, total_time: %ld%%\n  total_time_prev: %ld%%\n used_time: %ld%%\n used_time_prev: %ld%%\n", cpu_usage, total_time, total_time_prev, used_time, used_time_prev);
+    printk(KERN_INFO "total_time_diff: %ld%%\n", total_time_diff);
+    printk(KERN_INFO "used_time_diff: %ld%%\n", used_time_diff);
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
 
     si_meminfo(&info);
