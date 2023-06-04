@@ -187,7 +187,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         /* Get the passwd structure for the UID */
         // char *nombre_usuario = get_cred_username(task->real_cred);
 
-        seq_printf(archivo, "{\"id\": %d_%s,\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
+        seq_printf(archivo, "{\"id\": \"%d_%s\",\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
                    indext,
                    task->comm,
                    task->pid,

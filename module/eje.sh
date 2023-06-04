@@ -20,4 +20,5 @@ cat /proc/mem_grupo18
 # ! EJECUTAR STRESS
 # stress --cpu 1 --io 1 --vm 1 --vm-bytes 128M --timeout 10s
 # stress --cpu 2 --timeout 20s
+# stress --vm 1 --vm-bytes 2000M --timeout 10s
 
