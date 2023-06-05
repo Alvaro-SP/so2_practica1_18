@@ -7,7 +7,7 @@ import { Memoria } from "./components/Memoria";
 import { Grafica } from "./components/Grafica";
 import { Procesos } from "./components/Procesos";
 
-const API = import.meta.env.VITE_API 
+const API = import.meta.env.VITE_API;
 
 function App() {
   const [procesos, setProcesos] = useState({
@@ -31,19 +31,24 @@ function App() {
             total: data.memoria_total,
             libre: data.memoria_libre,
             buffer: data.buffer,
+            consumo: (data.memoria_total - data.memoria_libre) / (1024 * 1024),
             porcentaje: data.porcentaje / 100,
             unidad: data.mem_unit,
             ejex: xd.length,
           };
           xd.push(mapMemoria);
+          if(xd.length>30){
+            xd.shift()
+            console.log(xd)
+          }
           setMemoria(mapMemoria);
           setHistorialMemoria([...xd]);
         })
         .catch((err) => console.log(err.message));
       fetch(`${API}Principal`)
-      .then(res => res.json())
-      .then(data => setProcesos(data))
-      .catch(er => console.log(er))
+        .then((res) => res.json())
+        .then((data) => setProcesos(data))
+        .catch((er) => console.log(er));
     }, 3000);
     return () => {
       clearInterval(id);
@@ -59,7 +64,7 @@ function App() {
         <h1>Memoria RAM (MB)</h1>
         <Memoria data={memoria} />
         <h3>Consumo de memoria</h3>
-        <Grafica memoria={memoria} datos={historialMemoria} />
+        <Grafica datos={historialMemoria} />
         <h1>Procesos</h1>
         <Procesos
           total={procesos.Totales}
