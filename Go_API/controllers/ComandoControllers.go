@@ -8,7 +8,6 @@ import (
 	"log"
 	"net/http"
 	"os/exec"
-	"strconv"
 	"strings"
 )
 
@@ -26,6 +25,7 @@ func CMD(comando string) (bytes.Buffer, string, error) { //(entrada,salida)
 func RequestPrincipal() http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 
+    rw.Header().Set("Content-Type", "application/json")
 		salida, _, verificar := CMD("cat /proc/cpu_grupo18")
 		
 		if verificar != nil {
@@ -63,33 +63,6 @@ func RequestKill() http.HandlerFunc {
 	}
 }
 
-func RequestCPU() http.HandlerFunc {
-	return func(rw http.ResponseWriter, r *http.Request) {
-		ejecutar := "ps -eo pcpu | sort -k 1 -r | head -50"
-		salida, _, verificar := CMD(ejecutar)
-
-		if verificar != nil {
-			log.Printf("error: %v\n", verificar)
-		} else {
-			result := strings.Split(salida.String(), "\n")
-			// fmt.Println(result)
-			var theArray [50]string
-			entro := false
-			cont := 0
-			for _, item := range result {
-
-				if !entro {
-					entro = true
-				} else {
-					theArray[cont] += strings.TrimSpace(item)
-					cont++
-				}
-			}
-			// fmt.Println(errout)
-			json.NewEncoder(rw).Encode(theArray)
-		}
-	}
-}
 func RequestMemory() http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 		salida, _, verificar := CMD("cat /proc/mem_grupo18")
@@ -100,33 +73,6 @@ func RequestMemory() http.HandlerFunc {
 
 			var dataJson Models.DATAJSONMEMORY
 			json.Unmarshal(salida.Bytes(), &dataJson) //json a objeto
-			ejecutar := "free -m"
-			salidaMsj, _, verificar := CMD(ejecutar) //para cache
-
-			if verificar != nil {
-				log.Printf("error: %v\n", verificar)
-			} else {
-				result := strings.Split(salidaMsj.String(), "\n")
-				memoria := strings.ReplaceAll(result[1], " ", ",") //fila memoria
-				cacheBusqueda := strings.Split(memoria, ",")       //buscar valor cache
-				cont := 0
-				cachestr := "0"
-				for _, item := range cacheBusqueda {
-					if item != "" {
-						cont++
-						if cont == 6 {
-							cachestr = item
-						}
-					}
-				}
-
-				valor, err := strconv.Atoi(cachestr)
-				if err != nil {
-					fmt.Println(err)
-				} else {
-					dataJson.CACHE = valor * 1000000
-				}
-			}
       rw.Header().Set("Content-Type", "application/json")
 			json.NewEncoder(rw).Encode(dataJson)
 		}

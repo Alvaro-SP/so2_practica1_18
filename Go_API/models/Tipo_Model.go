@@ -19,13 +19,13 @@ type PROCESOHIJO struct {
 }
 
 type CPUDATAJSON struct {
-  	CPU_USAGE     int `json:cpu_usage`
-	DATA          []PROCESOPADRE
-	Ejecucion 	int		"json:ejecucion"
-    Zombie 		int		"json:zombie"
-    Detenido 	int		"json:detenido"
-    Suspendid 	int		"json:suspendido"
-    Totales 	int		"json:totales"
+  CPU_USAGE     int `json:cpu_usage`
+  DATA          []PROCESOPADRE
+	Ejecucion 	  int		"json:ejecucion"
+  Zombie 		    int		"json:zombie"
+  Detenido 	    int		"json:detenido"
+  Suspendid 	  int		"json:suspendido"
+  Totales 	    int		"json:totales"
 }
 
 type DATAJSONCPU struct {
@@ -36,7 +36,6 @@ type DATAJSONMEMORY struct {
 	MEMORIA_TOTAL int    `json:"memoria_total"`
 	MEMORIA_LIBRE int    `json:"memoria_libre"`
 	BUFFER        int    `json:"buffer"`
-	CACHE         int    `json:"cache"`
 	MEM_UNIT      int    `json:"mem_unit"`
 	PORCENTAJE    int    `json:"porcentaje"`
 }
