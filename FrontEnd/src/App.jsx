@@ -39,7 +39,6 @@ function App() {
           xd.push(mapMemoria);
           if(xd.length>30){
             xd.shift()
-            console.log(xd)
           }
           setMemoria(mapMemoria);
           setHistorialMemoria([...xd]);
