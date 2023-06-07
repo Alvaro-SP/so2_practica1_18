@@ -2,7 +2,7 @@ import "./App.css";
 import { DATA } from "./mocks/prueba.json";
 import { memo } from "./mocks/memoria.json";
 import { ProcessTable } from "./components/Table";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Memoria } from "./components/Memoria";
 import { Grafica } from "./components/Grafica";
 import { Procesos } from "./components/Procesos";
@@ -21,6 +21,7 @@ function App() {
   });
   const [memoria, setMemoria] = useState(memo);
   const [historialMemoria, setHistorialMemoria] = useState([]);
+  const firstRender = useRef(true);
   useEffect(() => {
     const xd = [];
     const id = setInterval(() => {
@@ -37,11 +38,12 @@ function App() {
             ejex: xd.length,
           };
           xd.push(mapMemoria);
-          if(xd.length>30){
-            xd.shift()
+          if (xd.length > 30) {
+            xd.shift();
           }
           setMemoria(mapMemoria);
           setHistorialMemoria([...xd]);
+          firstRender.current = false;
         })
         .catch((err) => console.log(err.message));
       fetch(`${API}Principal`)
@@ -59,23 +61,25 @@ function App() {
         <h1>Práctica Sistemas Operativos 2</h1>
         <h2>Grupo 18</h2>
       </header>
-      <main>
-        <h1>Memoria RAM (MB)</h1>
-        <Memoria data={memoria} />
-        <h3>Consumo de memoria</h3>
-        <Grafica datos={historialMemoria} />
-        <h1>Procesos</h1>
-        <Procesos
-          total={procesos.Totales}
-          exe={procesos.Ejecucion}
-          suspendidos={procesos.Suspendid}
-          detenidos={procesos.Detenido}
-          zombies={procesos.Zombie}
-          CPU_uso={procesos.CPU_USAGE}
-        />
-        <h3>Tabla de procesos</h3>
-        <ProcessTable data={procesos.DATA} />
-      </main>
+      {firstRender.current ? <h3>Cargando...</h3> : (
+        <main>
+          <h1>Memoria RAM (MB)</h1>
+          <Memoria data={memoria} />
+          <h3>Consumo de memoria</h3>
+          <Grafica datos={historialMemoria} />
+          <h1>Procesos</h1>
+          <Procesos
+            total={procesos.Totales}
+            exe={procesos.Ejecucion}
+            suspendidos={procesos.Suspendid}
+            detenidos={procesos.Detenido}
+            zombies={procesos.Zombie}
+            CPU_uso={procesos.CPU_USAGE}
+          />
+          <h3>Tabla de procesos</h3>
+          <ProcessTable data={procesos.DATA} />
+        </main>
+      )}
     </>
   );
 }
