@@ -54,12 +54,18 @@ static int to_open(struct inode *inode, struct file *file)
     return single_open(file, write_file, NULL);
 }
 
-static struct proc_ops operations =
+// static struct proc_ops operations =
+//     {
+//         // proc_open --: por error de distr.
+//         // proc_read --: por error de distr.
+//         .proc_open = to_open,
+//         .proc_read = seq_read};
+
+// Si el kernel es menor al 5.6 usan file_operations
+static struct file_operations operaciones =
     {
-        // proc_open --: por error de distr.
-        // proc_read --: por error de distr.
-        .proc_open = to_open,
-        .proc_read = seq_read};
+        .open = al_abrir,
+        .read = seq_read};
 
 static int iniciar_init(void)
 {
