@@ -64,12 +64,12 @@ static int to_open(struct inode *inode, struct file *file)
 // Si el kernel es menor al 5.6 usan file_operations
 static struct file_operations operaciones =
     {
-        .open = al_abrir,
+        .open = to_open,
         .read = seq_read};
 
 static int iniciar_init(void)
 {
-    proc_create("mem_grupo18", 0, NULL, &operations);
+    proc_create("mem_grupo18", 0, NULL, &operaciones);
     printk(KERN_INFO "Hola mundo, somos el grupo 18 y este es el monitor de memoria\n");
     return 0; // 0 = ERROR DE CARGA
 }
