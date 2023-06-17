@@ -39,3 +39,11 @@ type DATAJSONMEMORY struct {
 	MEM_UNIT      int    `json:"mem_unit"`
 	PORCENTAJE    int    `json:"porcentaje"`
 }
+
+type MemoryMap struct {
+	Direccion  string
+	Tamanio    uint64
+	Permisos   string
+	Dispositivo string
+	Archivo    string
+}
