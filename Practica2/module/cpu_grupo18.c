@@ -254,10 +254,16 @@ static int al_abrir(struct inode *inode, struct file *file)
 }
 
 // Si el su Kernel es 5.6 o mayor
-static struct proc_ops operaciones =
+// static struct proc_ops operaciones =
+//     {
+//         .proc_open = al_abrir,
+//         .proc_read = seq_read};
+
+// Si el kernel es menor al 5.6 usan file_operations
+static struct file_operations operaciones =
     {
-        .proc_open = al_abrir,
-        .proc_read = seq_read};
+        .open = al_abrir,
+        .read = seq_read};
 
 static int _insert(void)
 {
