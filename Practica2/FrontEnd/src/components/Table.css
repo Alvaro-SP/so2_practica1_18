@@ -4,7 +4,8 @@ table {
   color: #fff;
   width: 100%;
   border-radius: 10px;
-   margin: 5% 0;
+  margin: 5px 0;
+  overflow: scroll;
 }
 
 table thead th {
@@ -12,7 +13,7 @@ table thead th {
   border-radius: 2px;
 }
 
-table .expanded{
+table .expanded {
   background-color: rgba(255, 255, 255, 0.5);
 }
 tr:hover {
@@ -26,4 +27,28 @@ tr:hover {
 .btn-kill {
   height: 30px;
   font-size: 12px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semi-transparente para el modal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  border-radius: 5px;
+  width: 70%;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0); /* Fondo semi-transparente para el modal */
 }
