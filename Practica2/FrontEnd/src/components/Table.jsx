@@ -50,7 +50,7 @@ export function ParentRow(
   };
   return (
     <>
-      {showModal && <ModalRam pid={pid} cerrarModal={showRam} />}
+      {showModal && <ModalRam pid={pid} nombre={nombre} cerrarModal={showRam} />}
       <tr
         className={isExpanded ? "expanded" : "no-expanded"}
         onClick={handleClick}
@@ -83,39 +83,50 @@ export function ChildRow({ pid, nombre, usuario, estado, ram }) {
     </tr>
   );
 }
-export function ModalRam({ pid, cerrarModal }) {
-  const [asignaciones, setAsignaciones] = useState(maps);
+export function ModalRam({ pid, cerrarModal, nombre }) {
+  const [asignaciones, setAsignaciones] = useState([]);
   useEffect(() => {
     // Fetch para obtener maps
     fetch(`${API}maps?pid=${pid}`)
       .then((res) => res.json())
       .then((maps) => {
-        console.log(maps);
         setAsignaciones(maps);
       })
       .catch((err) => console.log(err));
   }, []);
+  const mapPermisos = (data) =>
+    data.map((value) => {
+      const listaPermisos = [];
+      if (value.Permisos.includes("r")) listaPermisos.push("Lectura");
+      if (value.Permisos.includes("w")) listaPermisos.push("Escritura");
+      if (value.Permisos.includes("x")) listaPermisos.push("Ejecución");
+      if (value.Permisos.includes("p")) listaPermisos.push("Privado");
+      if (value.Permisos.includes("s")) listaPermisos.push("Compartido");
+      return ({ ...value, Permisos: listaPermisos.join(",") });
+    });
   return (
     <section className="modal-overlay">
       <div className="modal">
-        <h2>{pid} - Asignación de memoria</h2>
-        <section style={{ height: "50vh", overflowY: "scroll" }}>
+        <h2>{pid} {nombre} - Asignación de memoria</h2>
+        <section
+          style={{ margin: "10px 0", height: "50vh", overflowY: "scroll" }}
+        >
           <table>
             <thead>
               <th>Direccion</th>
-              <th>Tamaño</th>
+              <th>Tamaño (Kb)</th>
               <th>Permisos</th>
               <th>Dispositivo</th>
               <th>Archivo</th>
             </thead>
             <tbody>
-              {asignaciones.map((value) => (
-                <tr className={"childrow"} key={value.direccion}>
-                  <td>{value.direccion}</td>
-                  <td>{value.tamanio}</td>
-                  <td>{value.permisos}</td>
-                  <td>{value.dispositivo}</td>
-                  <td>{value.archivo}</td>
+              {mapPermisos(asignaciones).map((value, index) => (
+                <tr className={"childrow"} key={index}>
+                  <td>{value.Direccion}</td>
+                  <td>{value.Tamanio}</td>
+                  <td>{value.Permisos}</td>
+                  <td>{value.Dispositivo}</td>
+                  <td>{value.Archivo}</td>
                 </tr>
               ))}
             </tbody>
