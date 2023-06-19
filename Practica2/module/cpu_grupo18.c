@@ -44,6 +44,13 @@ MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
 MODULE_AUTHOR("Grupo 18");
 
+/**
+    Funcion para obtener la informacion de la memoria
+
+    @param: task
+
+    @return: total_time (int): tiempo total de ejecucion del proceso
+*/
 static unsigned long long get_total_time(struct task_struct *task)
 {
     struct task_struct *child;
@@ -52,58 +59,68 @@ static unsigned long long get_total_time(struct task_struct *task)
     // Traverse the child process list recursively
     list_for_each_entry(child, &task->children, sibling)
     {
+        // Add the total time of current child process
         total_time += get_total_time(child);
     }
 
     return total_time;
 }
 
+/**
+    Funcion para obtener la informacion de la memoria
+
+    @param: archivo (struct seq_file *): archivo en /proc
+    @param: v (void *): variable para guardar la informacion
+
+    @return: 0
+*/
 static int escribir_archivo(struct seq_file *archivo, void *v)
 {
-    struct task_struct *task;
-    struct task_struct *task_hijo;
-    struct list_head *children;
-    long memproc;
-    long memproc2;
-    int indext = 0; // indice para el nombre de proceso
-    struct file *file;
-    struct file *file2;
-    char *strstate = ""; // variable para guardar el estado del proceso
-    char buffer[256];
-    int len;
-    long cpu_usage = 0;
-    struct sysinfo info;
-    long mem_usage;
-    bool first = true; // solo para el primer proceso la coma
-    long memoria_total = 0;
     // variables para guardar cantidad de procesos
-    long int ejecucion = 0;
-    long int suspendido = 0;
-    long int detenido = 0;
-    long int zombie = 0;
-    long int totales = 0;
+    struct task_struct *task;      // estructura para recorrer los procesos
+    struct task_struct *task_hijo; // estructura para recorrer los procesos
+    struct list_head *children;    // estructura para recorrer los procesos
+    long memproc;                  // variable para guardar la memoria de un proceso
+    long memproc2;
+    int indext = 0;         // indice para el nombre de proceso
+    struct file *file;      // estructura para guardar el archivo
+    struct file *file2;     // estructura para guardar el archivo
+    char *strstate = "";    // variable para guardar el estado del proceso
+    char buffer[256];       // buffer para guardar el nombre del proceso
+    int len;                // variable para guardar el largo del nombre del proceso
+    long cpu_usage = 0;     // variable para guardar el uso de CPU
+    struct sysinfo info;    // estructura para guardar la informacion de la memoria
+    long mem_usage;         // variable para guardar la memoria total
+    bool first = true;      // solo para el primer proceso la coma
+    long memoria_total = 0; // variable para guardar la memoria total
+    // variables para guardar cantidad de procesos
+    long int ejecucion = 0;  // variable para guardar la cantidad de procesos en ejecucion
+    long int suspendido = 0; // variable para guardar la cantidad de procesos suspendidos
+    long int detenido = 0;   // variable para guardar la cantidad de procesos detenidos
+    long int zombie = 0;     // variable para guardar la cantidad de procesos zombie
+    long int totales = 0;    // variable para guardar la cantidad de procesos totales
 
     //! ------------------------------- CALCULO DEL CPU -------------------------------
     // ? https://www.anshulpatel.in/posts/linux_cpu_percentage/
     long total_time_prev = 0;
     long used_time_prev = 0;
-
+    // funcion para obtener el tiempo total de ejecucion del proceso
     for_each_process(task)
     {
-        total_time_prev += get_total_time(task);
-        used_time_prev += task->utime + task->stime;
+        total_time_prev += get_total_time(task);     // tiempo total de ejecucion del proceso
+        used_time_prev += task->utime + task->stime; // tiempo total de ejecucion del proceso
     }
 
     // Sleep for 1 second
     msleep(500);
 
-    long total_time = 0;
-    long used_time = 0;
+    long total_time = 0; // tiempo total de ejecucion del proceso
+    long used_time = 0;  // tiempo usado de ejecucion del proceso
 
     // Traverse the task list to calculate total and used CPU time
     for_each_process(task)
     {
-        total_time += get_total_time(task);
+        total_time += get_total_time(task); // obtiene de la funcion el tiempo total de ejecucion del proceso
         used_time += task->utime + task->stime;
     }
 
@@ -112,30 +129,32 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // Calculate the CPU percentage
     if (total_time > total_time_prev)
     {
+        // si el tiempo total es mayor al tiempo total previo
         if (total_time < total_time_prev)
         {
             total_time_diff = total_time_prev - total_time;
         }
-        else
+        else // sino es mayor
         {
             total_time_diff = total_time - total_time_prev;
         }
-        if (used_time < used_time_prev)
+        if (used_time < used_time_prev) // si el tiempo usado es menor al tiempo previo
         {
             used_time_diff = used_time_prev - used_time;
         }
         else
-        {
+        { // sino es menor
             used_time_diff = used_time - used_time_prev;
         }
 
         cpu_usage = (used_time_diff * 100) / total_time_diff;
     }
+    // ! ------------------------------- FIN CALCULO DEL CPU -------------------------------
     printk(KERN_INFO "cpu_usage: %ld%%\n, total_time: %ld%%\n  total_time_prev: %ld%%\n used_time: %ld%%\n used_time_prev: %ld%%\n", cpu_usage, total_time, total_time_prev, used_time, used_time_prev);
     printk(KERN_INFO "total_time_diff: %ld%%\n", total_time_diff);
     printk(KERN_INFO "used_time_diff: %ld%%\n", used_time_diff);
     // printk(KERN_INFO "CPU Percent: %d%%\n", cpu_usage);
-
+    // funcion que obtiene la informacion de la memoria
     si_meminfo(&info);
 
     // total_mem = (info.totalram * info.mem_unit) >> 10;  // ! memoria total en MB
@@ -146,6 +165,8 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "\"cpu_usage\":"); //* "cpu_usage": 25.35,
     seq_printf(archivo, "%ld , \n", cpu_usage);
     seq_printf(archivo, "\"data\": ["); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
+    // funcion para recorrer los procesos
+    //! bucle principal que recorre los procesos
     for_each_process(task)
     {
         if (!first)
@@ -158,6 +179,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         //! 1 o 1026 : suspendido
         if (task->mm)
         {
+            // se obtiene la memoria del proceso
             memproc = (get_mm_rss(task->mm) << (PAGE_SHIFT - 10));
             // printk(KERN_INFO "Memoria de %s: %lu MB", task->comm, memproc);
             mem_usage = ((memproc * 100) / (memoria_total >> 10)); //! PORCENTAJE CON 2 DECIMALES PARSEAR EN FRONT
@@ -186,7 +208,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         totales++;
         /* Get the passwd structure for the UID */
         // char *nombre_usuario = get_cred_username(task->real_cred);
-
+        // esto imprime el json de cada proceso
         seq_printf(archivo, "{\"id\": \"%d_%s\",\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
                    indext,
                    task->comm,
@@ -197,9 +219,10 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         indext++;
         task_lock(task);
         children = &(task->children);
+        // se recorren los procesos hijos
         list_for_each_entry(task_hijo, children, sibling)
         {
-            if (task_hijo->mm)
+            if (task_hijo->mm) // si el proceso hijo tiene memoria
             {
                 // memproc2 = (get_mm_rss(task_hijo->mm)<<PAGE_SHIFT)/(1024*1024); // ! memoria de cada proceso hijo
                 // mem_usage = (memproc2*10000 / (long)(memoria_total/1000000));
@@ -216,7 +239,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
                        task_hijo->real_cred->uid,
                        strstate,
                        mem_usage);
-
+            // si no es el ultimo proceso hijo
             if (task_hijo->sibling.next != &task->children)
             {
                 seq_printf(archivo, ",");
@@ -226,11 +249,11 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         seq_printf(archivo, "]\n}");
         first = false;
     }
-
+    // se cierra el json
     seq_printf(archivo, "], \n");
     seq_printf(archivo, "\"ejecucion\":");
     seq_printf(archivo, "%li , \n", ejecucion);
-
+    // luego se imprime la informacion de los procesos
     seq_printf(archivo, "\"zombie\":");
     seq_printf(archivo, "%li , \n", zombie);
 
@@ -247,6 +270,13 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     return 0;
 }
 
+/**
+ * @brief
+ *
+ * @param inode: estructura que contiene informacion del archivo
+ * @param file : estructura que contiene informacion del archivo
+ * @return int
+ */
 // Funcion que se ejecuta cuando se le hace un cat al modulo.
 static int al_abrir(struct inode *inode, struct file *file)
 {
@@ -259,19 +289,30 @@ static int al_abrir(struct inode *inode, struct file *file)
 //         .proc_open = al_abrir,
 //         .proc_read = seq_read};
 
+/**
+ * @brief
+ *
+ */
 // Si el kernel es menor al 5.6 usan file_operations
 static struct file_operations operaciones =
     {
         .open = al_abrir,
         .read = seq_read};
-
+/**
+ * @brief
+ *
+ * @return int
+ */
 static int _insert(void)
 {
     proc_create("cpu_grupo18", 0, NULL, &operaciones);
     printk(KERN_INFO "Hola mundo, somos el grupo 18 y este es el monitor de CPU\n");
     return 0;
 }
-
+/**
+ * @brief
+ *
+ */
 static void _remove(void)
 {
     remove_proc_entry("cpu_grupo18", NULL);
