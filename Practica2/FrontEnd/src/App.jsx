@@ -6,8 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import { Memoria } from "./components/Memoria";
 import { Grafica } from "./components/Grafica";
 import { Procesos } from "./components/Procesos";
+import axios from "axios";
 
-const API = import.meta.env.VITE_API;
+const API =  import.meta.env.VITE_API;
 
 function App() {
   const [procesos, setProcesos] = useState({
@@ -25,8 +26,8 @@ function App() {
   useEffect(() => {
     const xd = [];
     const id = setInterval(() => {
-      fetch(`${API}Memoria`)
-        .then((res) => res.json())
+      axios.get(`${API}Memoria`)
+        .then((res) => res.data)
         .then((data) => {
           const mapMemoria = {
             total: data.memoria_total,
@@ -37,6 +38,7 @@ function App() {
             unidad: data.mem_unit,
             ejex: xd.length,
           };
+          console.log(mapMemoria)
           xd.push(mapMemoria);
           if (xd.length > 30) {
             xd.shift();
@@ -46,8 +48,8 @@ function App() {
           firstRender.current = false;
         })
         .catch((err) => console.log(err.message));
-      fetch(`${API}Principal`)
-        .then((res) => res.json())
+      axios.get(`${API}Principal`)
+        .then((res) => res.data)
         .then((data) => setProcesos(data))
         .catch((er) => console.log(er));
     }, 3000);
@@ -74,7 +76,7 @@ function App() {
             suspendidos={procesos.Suspendid}
             detenidos={procesos.Detenido}
             zombies={procesos.Zombie}
-            CPU_uso={procesos.CPU_USAGE}
+            uso={procesos.CPU_USAGE}
           />
           <h3>Tabla de procesos</h3>
           <ProcessTable data={procesos.DATA} />

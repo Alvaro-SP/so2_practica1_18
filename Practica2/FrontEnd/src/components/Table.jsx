@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Table.css";
 import { useEffect } from "react";
 import maps from "../mocks/maps.json";
-
+import axios from "axios";
 const API = import.meta.env.VITE_API;
 export function ProcessTable({ data }) {
   return (
@@ -44,7 +44,7 @@ export function ParentRow(
   const sendKill = (e) => {
     e.stopPropagation();
     console.log(pid);
-    fetch(`${API}Kill?pid=${pid}`)
+    axios.get(`${API}Kill?pid=${pid}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
@@ -86,11 +86,11 @@ export function ChildRow({ pid, nombre, usuario, estado, ram }) {
 export function ModalRam({ pid, cerrarModal, nombre }) {
   const [asignaciones, setAsignaciones] = useState([]);
   useEffect(() => {
-    // Fetch para obtener maps
-    fetch(`${API}maps?pid=${pid}`)
-      .then((res) => res.json())
+    // Post para obtener maps
+    axios.get(`${API}maps?pid=${pid}`)
+      .then((res) => res.data)
       .then((maps) => {
-        setAsignaciones(maps);
+        setAsignaciones(maps??[]);
       })
       .catch((err) => console.log(err));
   }, []);
