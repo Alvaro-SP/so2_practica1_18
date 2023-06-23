@@ -123,7 +123,7 @@ export function ModalRam({ pid, cerrarModal, nombre }) {
               {mapPermisos(asignaciones).map((value, index) => (
                 <tr className={"childrow"} key={index}>
                   <td>{value.Direccion}</td>
-                  <td>{value.Tamanio}</td>
+                  <td>{value.Tamanio/1024}</td>
                   <td>{value.Permisos}</td>
                   <td>{value.Dispositivo}</td>
                   <td>{value.Archivo}</td>

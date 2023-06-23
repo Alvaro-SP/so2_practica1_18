@@ -4,7 +4,9 @@ import (
 	"Backend/controllers"
 	"github.com/gorilla/mux"
 )
-
+/** ComandoRoute es la ruta que será consumida por el FrontEnd 
+ * @param router es el router que se utiliza para la creación de las rutas
+ */
 func ComandoRoute(router *mux.Router) {
 	//Rutas que serán consumidas por el FrontEnd
 	router.HandleFunc("/", Controllers.IndexHandler).Methods("GET") //Retorna un mensaje de prueba
