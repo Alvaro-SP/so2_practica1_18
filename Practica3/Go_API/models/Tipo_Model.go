@@ -47,3 +47,13 @@ type MemoryMap struct {
 	Dispositivo string // Dispositivo sirve para guardar el dispositivo de memoria
 	Archivo    string	// Archivo sirve para guardar el archivo de memoria
 }
+
+// MemResVirtual representa la estructura de datos de Residente y virtual 
+type MemResVirtual struct {
+	Residente	uint64	// Memoria residente del proceso 
+	Virtual		uint64	// Memoria virtual del proceso 
+}
+type Memory struct {
+	Arr1          []MemoryMap
+	Arr2          []MemResVirtual
+}

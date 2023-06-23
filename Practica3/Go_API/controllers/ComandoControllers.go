@@ -208,15 +208,28 @@ func RequestMaps() http.HandlerFunc {
 				fmt.Println("Error al convertir el string a int:", err)
 				return
 			}
+			var memorys []Models.Memory  // variable representa al Mapa de datos de la Memoria
 			//Ejecución del comando para la eliminación del proceso con el pid recibido
 			salida, verificar := ObtenerDatosMaps(num)
 			if verificar != nil {
 				log.Printf("error: %v\n", verificar)
 				return 
 			} 
+			//! ------ Obtener RSS y Size del archivo /proc/pid/smaps  -------
+			salidasmaps, smapsErr := ObtenerRSS(num)
+			if smapsErr != nil {
+				log.Printf("Error en la lectura de SMAPS: %v", err)
+				return
+			}
+			memory := Models.Memory{
+				Arr1:   salida,
+				Arr2:   salidasmaps,
+			}
+			//Añadimos el objeto a la lista
+			memorys = append(memorys, memory)
 			// Agregando cabecera para que se formatee a json
       		rw.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(rw).Encode(salida) //Enviamos salida por el responseWriter
+			json.NewEncoder(rw).Encode(memorys) //Enviamos salida por el responseWriter
 		}else{
 			//sino se reconoce el metodo se alerta el estado del error.
 			rw.WriteHeader(http.StatusNotImplemented)
@@ -281,7 +294,7 @@ func ObtenerDatosMaps(pid int) ([]Models.MemoryMap, error) {
 			}
 			// Cálculo del tamaño de segmento
 			size := end - start
-
+			
 			memoryMap := Models.MemoryMap{
 				Direccion:   addressRange,
 				Tamanio:     size,
@@ -293,8 +306,65 @@ func ObtenerDatosMaps(pid int) ([]Models.MemoryMap, error) {
 			memoryMaps = append(memoryMaps, memoryMap)
 		}
 	}
-
 	return memoryMaps, nil
 }
 
+// sudo cat smaps | grep 'Rss:'
+// sudo cat smaps | grep 'Size:'
+func ObtenerRSS(pid int) ([]Models.MemResVirtual, error) {
+	smapsPath := fmt.Sprintf("/proc/%d/smaps", pid)
+	file, err := os.Open(smapsPath)
+
+	var memResVirtuals []Models.MemResVirtual  // variable representa al Mapa de datos de la Memoria
+	if err != nil {
+		return memResVirtuals, err
+	}
+	defer file.Close()
+
+	reader := bufio.NewReader(file)
+	var rss uint64
+	var sizevm uint64
+
+	for {
+		line, err := reader.ReadString('\n')
+		if err != nil && err != io.EOF {
+			return memResVirtuals, err
+		}
+
+		if line == "" || err == io.EOF {
+			break
+		}
+
+		if strings.HasPrefix(line, "Rss:") {
+			fields := strings.Fields(line)
+			if len(fields) >= 2 {
+				sizeKb, err := strconv.ParseUint(fields[1], 10, 64)
+				if err != nil {
+					return memResVirtuals, err
+				}
+				rss += sizeKb / 1024
+			}
+		}
+		if strings.HasPrefix(line, "Size:") {
+			fields := strings.Fields(line)
+			if len(fields) >= 2 {
+				sizeKb, err := strconv.ParseUint(fields[1], 10, 64)
+				if err != nil {
+					return memResVirtuals, err
+				}
+				sizevm += sizeKb / 1024
+			}
+
+			memResVirtual := Models.MemResVirtual{			
+				Residente:   rss,
+				Virtual:     sizevm,
+			}
+			//Añadimos el objeto a la lista
+			memResVirtuals = append(memResVirtuals, memResVirtual)
+		}	
+		
+	}
+
+	return memResVirtuals, nil
+}
 // att. el Grupo 18, el mejor!! el grupo más sistémico 😂
