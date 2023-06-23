@@ -106,8 +106,8 @@ export function ModalRam({ pid, cerrarModal, nombre }) {
       .catch((err) => console.log(err));
   }, []);
   const mapPermisos = (data, smaps) => {
-    const rss = 0;
-    const size = 0;
+    let rss = 0;
+    let size = 0;
     const mapped = data.map((value, index) => {
       const listaPermisos = [];
       if (value.Permisos.includes("r")) listaPermisos.push("Lectura");
@@ -155,7 +155,7 @@ export function ModalRam({ pid, cerrarModal, nombre }) {
               <th>Size</th>
             </thead>
             <tbody>
-              {mapPermisos(asignaciones).map((value, index) => (
+              {asignaciones.map((value, index) => (
                 <tr className={"childrow"} key={index}>
                   <td>{value.Direccion}</td>
                   <td>{value.Tamanio / 1024}</td>
