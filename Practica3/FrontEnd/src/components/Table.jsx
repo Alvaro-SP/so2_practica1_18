@@ -98,16 +98,19 @@ export function ModalRam({ pid, cerrarModal, nombre }) {
     axios.get(`${API}maps?pid=${pid}`)
       .then((res) => res.data)
       .then((maps) => {
+        console.log(maps)
         if (maps == null) return;
-        const { mapped, rss, size } = mapPermisos(maps.arr1, maps.arr2);
-        setAsignaciones(mapped);
-        setMemoria({ mv: size, mr: rss });
+        const { mapped, rss, size } = mapPermisos(maps[0].Arr1, maps[0].Arr2);
+          setAsignaciones(mapped);
+          setMemoria({ mv: size/1024, mr: rss/1024 });
       })
       .catch((err) => console.log(err));
+    
   }, []);
   const mapPermisos = (data, smaps) => {
     let rss = 0;
     let size = 0;
+    console.log(smaps)
     const mapped = data.map((value, index) => {
       const listaPermisos = [];
       if (value.Permisos.includes("r")) listaPermisos.push("Lectura");
@@ -115,9 +118,13 @@ export function ModalRam({ pid, cerrarModal, nombre }) {
       if (value.Permisos.includes("x")) listaPermisos.push("Ejecución");
       if (value.Permisos.includes("p")) listaPermisos.push("Privado");
       if (value.Permisos.includes("s")) listaPermisos.push("Compartido");
-      rss += smaps[index].rss;
-      size += smaps[index].size;
-      return ({ ...value, Permisos: listaPermisos.join(",") });
+      
+      // size += smaps[index].Virtual;
+      return ({ ...value, Permisos: listaPermisos.join(","), Virtual: smaps[index].Virtual, Residente: smaps[index].Residente });
+    });
+    smaps.forEach((value, index) => {
+      rss += smaps[index].Residente;
+      size += smaps[index].Virtual;
     });
     return { mapped, rss, size };
   };
@@ -147,21 +154,23 @@ export function ModalRam({ pid, cerrarModal, nombre }) {
           <table>
             <thead>
               <th>Direccion</th>
-              <th>Tamaño (Kb)</th>
+              {/* <th>Tamaño (Kb)</th> */}
               <th>Permisos</th>
               <th>Dispositivo</th>
               <th>Archivo</th>
-              <th>RSS</th>
-              <th>Size</th>
+              <th>RSS (Mb)</th>
+              <th>Size (Mb)</th>
             </thead>
             <tbody>
               {asignaciones.map((value, index) => (
                 <tr className={"childrow"} key={index}>
                   <td>{value.Direccion}</td>
-                  <td>{value.Tamanio / 1024}</td>
+                  {/* <td>{value.Tamanio / 1024}</td> */}
                   <td>{value.Permisos}</td>
                   <td>{value.Dispositivo}</td>
                   <td>{value.Archivo}</td>
+                  <td>{value.Residente/1024}</td>
+                  <td>{value.Virtual/1024}</td>
                 </tr>
               ))}
             </tbody>
