@@ -50,8 +50,8 @@ type MemoryMap struct {
 
 // MemResVirtual representa la estructura de datos de Residente y virtual 
 type MemResVirtual struct {
-	Residente	uint64	// Memoria residente del proceso 
-	Virtual		uint64	// Memoria virtual del proceso 
+	Residente	int	// Memoria residente del proceso 
+	Virtual		int	// Memoria virtual del proceso 
 }
 type Memory struct {
 	Arr1          []MemoryMap

@@ -312,59 +312,116 @@ func ObtenerDatosMaps(pid int) ([]Models.MemoryMap, error) {
 // sudo cat smaps | grep 'Rss:'
 // sudo cat smaps | grep 'Size:'
 func ObtenerRSS(pid int) ([]Models.MemResVirtual, error) {
-	smapsPath := fmt.Sprintf("/proc/%d/smaps", pid)
-	file, err := os.Open(smapsPath)
-
 	var memResVirtuals []Models.MemResVirtual  // variable representa al Mapa de datos de la Memoria
-	if err != nil {
-		return memResVirtuals, err
+	salida, _, verificar := CMD("cat /proc/"+strconv.Itoa(pid)+"/smaps | grep 'Rss:'")
+	if verificar != nil {
+		log.Printf("error: %v\n", verificar)
+		return memResVirtuals, nil
 	}
-	defer file.Close()
 
-	reader := bufio.NewReader(file)
-	var rss uint64
-	var sizevm uint64
+	salida2, _, verificar2 := CMD("cat /proc/"+strconv.Itoa(pid)+"/smaps | grep '^Size:'")
+	if verificar2 != nil {
+		log.Printf("error: %v\n", verificar2)
+		return memResVirtuals, nil
+	}
 
-	for {
-		line, err := reader.ReadString('\n')
-		if err != nil && err != io.EOF {
-			return memResVirtuals, err
-		}
+	lines := strings.Split(salida.String(), "\n")
+	totalRss := 0
+	lines2 := strings.Split(salida2.String(), "\n")
+	totalSize := 0
+	indx := 0
 
-		if line == "" || err == io.EOF {
-			break
-		}
-
-		if strings.HasPrefix(line, "Rss:") {
-			fields := strings.Fields(line)
-			if len(fields) >= 2 {
-				sizeKb, err := strconv.ParseUint(fields[1], 10, 64)
-				if err != nil {
-					return memResVirtuals, err
-				}
-				rss += sizeKb / 1024
-			}
-		}
-		if strings.HasPrefix(line, "Size:") {
-			fields := strings.Fields(line)
-			if len(fields) >= 2 {
-				sizeKb, err := strconv.ParseUint(fields[1], 10, 64)
-				if err != nil {
-					return memResVirtuals, err
-				}
-				sizevm += sizeKb / 1024
-			}
-
-			memResVirtual := Models.MemResVirtual{			
-				Residente:   rss,
-				Virtual:     sizevm,
-			}
-			//Añadimos el objeto a la lista
-			memResVirtuals = append(memResVirtuals, memResVirtual)
-		}	
+	for _, line := range lines {
+		// Extraer el valor numérico de la línea
+		valueStr := strings.TrimSpace(strings.TrimPrefix(line, "Rss:"))
+		valueStr2 := strings.TrimSpace(strings.TrimPrefix(lines2[indx], "Size:"))
+		va := strings.Split(valueStr, " ")
+		va2 := strings.Split(valueStr2, " ")
+		value, err := strconv.Atoi(va[0])
+		value2, err := strconv.Atoi(va2[0])
 		
-	}
+		if err != nil {
+			continue
+		}
 
+		// Sumar el valor al total
+		totalRss += value
+		totalSize += value2
+		indx += 1
+		
+		memResVirtual := Models.MemResVirtual{			
+			Residente:   value,
+			Virtual:     value2,
+		}
+		//Añadimos el objeto a la lista
+		memResVirtuals = append(memResVirtuals, memResVirtual)
+	}
+	fmt.Printf("Rss total: %d\n", totalRss)
+	fmt.Printf("Size total: %d\n", totalSize)
 	return memResVirtuals, nil
+	// smapsPath := fmt.Sprintf("/proc/%d/smaps", pid)
+	// file, err := os.Open(smapsPath)
+
+	// var memResVirtuals []Models.MemResVirtual  // variable representa al Mapa de datos de la Memoria
+	// if err != nil {
+	// 	return memResVirtuals, err
+	// }
+	// defer file.Close()
+
+	// reader := bufio.NewReader(file)
+	// var rss uint64
+	// var sizevm uint64
+	// contador := 0
+	// contador2 := 0
+
+	// for {
+		
+	// 	line, err := reader.ReadString('\n')
+	// 	if err != nil && err != io.EOF {
+	// 		return memResVirtuals, err
+	// 	}
+
+	// 	if line == "" || err == io.EOF {
+	// 		break
+	// 	}
+
+	// 	if strings.HasPrefix(line, "Rss:") {
+	// 		contador2=contador2+1
+			
+	// 		fields := strings.Fields(line)
+	// 		if len(fields) >= 2 {
+	// 			sizeKb, err := strconv.ParseUint(fields[1], 10, 64)
+	// 			if err != nil {
+	// 				return memResVirtuals, err
+	// 			}
+	// 			rss += sizeKb / 1024
+	// 		}
+			
+	// 	}
+	// 	if strings.HasPrefix(line, "Size:") {
+	// 		contador=contador+1
+			
+	// 		fields := strings.Fields(line)
+	// 		if len(fields) >= 2 {
+	// 			sizeKb, err := strconv.ParseUint(fields[1], 10, 64)
+	// 			if err != nil {
+	// 				return memResVirtuals, err
+	// 			}
+	// 			sizevm += sizeKb / 1024
+	// 		}
+	// 		memResVirtual := Models.MemResVirtual{			
+	// 			Residente:   rss,
+	// 			Virtual:     sizevm,
+	// 		}
+	// 		//Añadimos el objeto a la lista
+	// 		memResVirtuals = append(memResVirtuals, memResVirtual)
+	// 	}	
+		
+	// }
+	// fmt.Println(contador)
+
+	// return memResVirtuals, nil
 }
+
+
 // att. el Grupo 18, el mejor!! el grupo más sistémico 😂
