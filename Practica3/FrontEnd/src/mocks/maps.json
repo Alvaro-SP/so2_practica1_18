@@ -1,0 +1,1471 @@
+[
+    {
+        "Arr1": [
+            {
+                "Direccion": "559fb03e3000-559fb0419000",
+                "Tamanio": 221184,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/systemd"
+            },
+            {
+                "Direccion": "559fb0419000-559fb04f9000",
+                "Tamanio": 917504,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/systemd"
+            },
+            {
+                "Direccion": "559fb04f9000-559fb0558000",
+                "Tamanio": 389120,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/systemd"
+            },
+            {
+                "Direccion": "559fb0558000-559fb05a7000",
+                "Tamanio": 323584,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/systemd"
+            },
+            {
+                "Direccion": "559fb05a7000-559fb05a8000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/systemd"
+            },
+            {
+                "Direccion": "559fb08b3000-559fb0bde000",
+                "Tamanio": 3321856,
+                "Permisos": "rw-p",
+                "Dispositivo": "00:00",
+                "Archivo": "[heap]"
+            },
+            {
+                "Direccion": "7fd11b89a000-7fd11b89c000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4"
+            },
+            {
+                "Direccion": "7fd11b89c000-7fd11b907000",
+                "Tamanio": 438272,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4"
+            },
+            {
+                "Direccion": "7fd11b907000-7fd11b92f000",
+                "Tamanio": 163840,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4"
+            },
+            {
+                "Direccion": "7fd11b92f000-7fd11b930000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4"
+            },
+            {
+                "Direccion": "7fd11b930000-7fd11b931000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4"
+            },
+            {
+                "Direccion": "7fd11b931000-7fd11b93b000",
+                "Tamanio": 40960,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8"
+            },
+            {
+                "Direccion": "7fd11b93b000-7fd11b9ed000",
+                "Tamanio": 729088,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8"
+            },
+            {
+                "Direccion": "7fd11b9ed000-7fd11b9fe000",
+                "Tamanio": 69632,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8"
+            },
+            {
+                "Direccion": "7fd11b9fe000-7fd11b9ff000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8"
+            },
+            {
+                "Direccion": "7fd11b9ff000-7fd11ba00000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8"
+            },
+            {
+                "Direccion": "7fd11ba00000-7fd11bab2000",
+                "Tamanio": 729088,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3"
+            },
+            {
+                "Direccion": "7fd11bab2000-7fd11bd0f000",
+                "Tamanio": 2478080,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3"
+            },
+            {
+                "Direccion": "7fd11bd0f000-7fd11bde1000",
+                "Tamanio": 860160,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3"
+            },
+            {
+                "Direccion": "7fd11bde1000-7fd11be3c000",
+                "Tamanio": 372736,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3"
+            },
+            {
+                "Direccion": "7fd11be3c000-7fd11be3f000",
+                "Tamanio": 12288,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3"
+            },
+            {
+                "Direccion": "7fd11bec2000-7fd11bed1000",
+                "Tamanio": 61440,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4"
+            },
+            {
+                "Direccion": "7fd11bed1000-7fd11bfb7000",
+                "Tamanio": 942080,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4"
+            },
+            {
+                "Direccion": "7fd11bfb7000-7fd11bff5000",
+                "Tamanio": 253952,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4"
+            },
+            {
+                "Direccion": "7fd11bff5000-7fd11bff6000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4"
+            },
+            {
+                "Direccion": "7fd11bff6000-7fd11bff9000",
+                "Tamanio": 12288,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4"
+            },
+            {
+                "Direccion": "7fd11bff9000-7fd11bfff000",
+                "Tamanio": 24576,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.3.4"
+            },
+            {
+                "Direccion": "7fd11c000000-7fd11c028000",
+                "Tamanio": 163840,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libc.so.6"
+            },
+            {
+                "Direccion": "7fd11c028000-7fd11c1bd000",
+                "Tamanio": 1658880,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libc.so.6"
+            },
+            {
+                "Direccion": "7fd11c1bd000-7fd11c215000",
+                "Tamanio": 360448,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libc.so.6"
+            },
+            {
+                "Direccion": "7fd11c215000-7fd11c219000",
+                "Tamanio": 16384,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libc.so.6"
+            },
+            {
+                "Direccion": "7fd11c219000-7fd11c21b000",
+                "Tamanio": 8192,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libc.so.6"
+            },
+            {
+                "Direccion": "7fd11c27e000-7fd11c282000",
+                "Tamanio": 16384,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1"
+            },
+            {
+                "Direccion": "7fd11c282000-7fd11c298000",
+                "Tamanio": 90112,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1"
+            },
+            {
+                "Direccion": "7fd11c298000-7fd11c2a2000",
+                "Tamanio": 40960,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1"
+            },
+            {
+                "Direccion": "7fd11c2a2000-7fd11c2a3000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1"
+            },
+            {
+                "Direccion": "7fd11c2a3000-7fd11c2a4000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libgpg-error.so.0.32.1"
+            },
+            {
+                "Direccion": "7fd11c2a4000-7fd11c2a6000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0"
+            },
+            {
+                "Direccion": "7fd11c2a6000-7fd11c2a9000",
+                "Tamanio": 12288,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0"
+            },
+            {
+                "Direccion": "7fd11c2a9000-7fd11c2aa000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0"
+            },
+            {
+                "Direccion": "7fd11c2aa000-7fd11c2ab000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0"
+            },
+            {
+                "Direccion": "7fd11c2ab000-7fd11c2ac000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0"
+            },
+            {
+                "Direccion": "7fd11c2ac000-7fd11c2af000",
+                "Tamanio": 12288,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5"
+            },
+            {
+                "Direccion": "7fd11c2af000-7fd11c2ca000",
+                "Tamanio": 110592,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5"
+            },
+            {
+                "Direccion": "7fd11c2ca000-7fd11c2d5000",
+                "Tamanio": 45056,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5"
+            },
+            {
+                "Direccion": "7fd11c2d5000-7fd11c2d6000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5"
+            },
+            {
+                "Direccion": "7fd11c2d6000-7fd11c2d7000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5"
+            },
+            {
+                "Direccion": "7fd11c2d9000-7fd11c2db000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3"
+            },
+            {
+                "Direccion": "7fd11c2db000-7fd11c2f4000",
+                "Tamanio": 102400,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3"
+            },
+            {
+                "Direccion": "7fd11c2f4000-7fd11c2f6000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3"
+            },
+            {
+                "Direccion": "7fd11c2f6000-7fd11c2f7000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3"
+            },
+            {
+                "Direccion": "7fd11c2f7000-7fd11c2f8000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3"
+            },
+            {
+                "Direccion": "7fd11c2f8000-7fd11c2f9000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/liblz4.so.1.9.3"
+            },
+            {
+                "Direccion": "7fd11c2f9000-7fd11c2fb000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libip4tc.so.2.0.0"
+            },
+            {
+                "Direccion": "7fd11c2fb000-7fd11c2ff000",
+                "Tamanio": 16384,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libip4tc.so.2.0.0"
+            },
+            {
+                "Direccion": "7fd11c2ff000-7fd11c301000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libip4tc.so.2.0.0"
+            },
+            {
+                "Direccion": "7fd11c301000-7fd11c302000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libip4tc.so.2.0.0"
+            },
+            {
+                "Direccion": "7fd11c302000-7fd11c303000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libip4tc.so.2.0.0"
+            },
+            {
+                "Direccion": "7fd11c303000-7fd11c305000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c305000-7fd11c319000",
+                "Tamanio": 81920,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c319000-7fd11c332000",
+                "Tamanio": 102400,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c332000-7fd11c333000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c333000-7fd11c334000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c334000-7fd11c335000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c33d000-7fd11c340000",
+                "Tamanio": 12288,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap.so.2.44"
+            },
+            {
+                "Direccion": "7fd11c340000-7fd11c344000",
+                "Tamanio": 16384,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap.so.2.44"
+            },
+            {
+                "Direccion": "7fd11c344000-7fd11c346000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap.so.2.44"
+            },
+            {
+                "Direccion": "7fd11c346000-7fd11c347000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap.so.2.44"
+            },
+            {
+                "Direccion": "7fd11c347000-7fd11c348000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libcap.so.2.44"
+            },
+            {
+                "Direccion": "7fd11c34a000-7fd11c351000",
+                "Tamanio": 28672,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c351000-7fd11c371000",
+                "Tamanio": 131072,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c371000-7fd11c37a000",
+                "Tamanio": 36864,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c37a000-7fd11c37b000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c37b000-7fd11c380000",
+                "Tamanio": 20480,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c380000-7fd11c381000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c381000-7fd11c383000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301"
+            },
+            {
+                "Direccion": "7fd11c383000-7fd11c387000",
+                "Tamanio": 16384,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301"
+            },
+            {
+                "Direccion": "7fd11c387000-7fd11c388000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301"
+            },
+            {
+                "Direccion": "7fd11c388000-7fd11c389000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301"
+            },
+            {
+                "Direccion": "7fd11c389000-7fd11c38a000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301"
+            },
+            {
+                "Direccion": "7fd11c38a000-7fd11c38b000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301"
+            },
+            {
+                "Direccion": "7fd11c38b000-7fd11c38e000",
+                "Tamanio": 12288,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libapparmor.so.1.8.2"
+            },
+            {
+                "Direccion": "7fd11c38e000-7fd11c397000",
+                "Tamanio": 36864,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libapparmor.so.1.8.2"
+            },
+            {
+                "Direccion": "7fd11c397000-7fd11c39e000",
+                "Tamanio": 28672,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libapparmor.so.1.8.2"
+            },
+            {
+                "Direccion": "7fd11c39e000-7fd11c39f000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libapparmor.so.1.8.2"
+            },
+            {
+                "Direccion": "7fd11c39f000-7fd11c3a0000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libapparmor.so.1.8.2"
+            },
+            {
+                "Direccion": "7fd11c3a0000-7fd11c3a4000",
+                "Tamanio": 16384,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libkmod.so.2.3.7"
+            },
+            {
+                "Direccion": "7fd11c3a4000-7fd11c3b5000",
+                "Tamanio": 69632,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libkmod.so.2.3.7"
+            },
+            {
+                "Direccion": "7fd11c3b5000-7fd11c3ba000",
+                "Tamanio": 20480,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libkmod.so.2.3.7"
+            },
+            {
+                "Direccion": "7fd11c3ba000-7fd11c3bb000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libkmod.so.2.3.7"
+            },
+            {
+                "Direccion": "7fd11c3bb000-7fd11c3bc000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libkmod.so.2.3.7"
+            },
+            {
+                "Direccion": "7fd11c3bc000-7fd11c3c4000",
+                "Tamanio": 32768,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c3c4000-7fd11c3f0000",
+                "Tamanio": 180224,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c3f0000-7fd11c3fd000",
+                "Tamanio": 53248,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c3fd000-7fd11c3fe000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c3fe000-7fd11c3ff000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c3ff000-7fd11c400000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0"
+            },
+            {
+                "Direccion": "7fd11c400000-7fd11c451000",
+                "Tamanio": 331776,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/libsystemd-shared-249.so"
+            },
+            {
+                "Direccion": "7fd11c451000-7fd11c5fa000",
+                "Tamanio": 1740800,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/libsystemd-shared-249.so"
+            },
+            {
+                "Direccion": "7fd11c5fa000-7fd11c6a2000",
+                "Tamanio": 688128,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/libsystemd-shared-249.so"
+            },
+            {
+                "Direccion": "7fd11c6a2000-7fd11c6b5000",
+                "Tamanio": 77824,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/libsystemd-shared-249.so"
+            },
+            {
+                "Direccion": "7fd11c6b5000-7fd11c6b6000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/systemd/libsystemd-shared-249.so"
+            },
+            {
+                "Direccion": "7fd11c6b8000-7fd11c6bb000",
+                "Tamanio": 12288,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0"
+            },
+            {
+                "Direccion": "7fd11c6bb000-7fd11c6c3000",
+                "Tamanio": 32768,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0"
+            },
+            {
+                "Direccion": "7fd11c6c3000-7fd11c6d8000",
+                "Tamanio": 86016,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0"
+            },
+            {
+                "Direccion": "7fd11c6d8000-7fd11c6d9000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0"
+            },
+            {
+                "Direccion": "7fd11c6d9000-7fd11c6da000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0"
+            },
+            {
+                "Direccion": "7fd11c6e8000-7fd11c6eb000",
+                "Tamanio": 12288,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpam.so.0.85.1"
+            },
+            {
+                "Direccion": "7fd11c6eb000-7fd11c6f4000",
+                "Tamanio": 36864,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpam.so.0.85.1"
+            },
+            {
+                "Direccion": "7fd11c6f4000-7fd11c6f8000",
+                "Tamanio": 16384,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpam.so.0.85.1"
+            },
+            {
+                "Direccion": "7fd11c6f8000-7fd11c6f9000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpam.so.0.85.1"
+            },
+            {
+                "Direccion": "7fd11c6f9000-7fd11c6fa000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libpam.so.0.85.1"
+            },
+            {
+                "Direccion": "7fd11c6fa000-7fd11c700000",
+                "Tamanio": 24576,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libselinux.so.1"
+            },
+            {
+                "Direccion": "7fd11c700000-7fd11c71a000",
+                "Tamanio": 106496,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libselinux.so.1"
+            },
+            {
+                "Direccion": "7fd11c71a000-7fd11c721000",
+                "Tamanio": 28672,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libselinux.so.1"
+            },
+            {
+                "Direccion": "7fd11c721000-7fd11c722000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libselinux.so.1"
+            },
+            {
+                "Direccion": "7fd11c722000-7fd11c723000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libselinux.so.1"
+            },
+            {
+                "Direccion": "7fd11c723000-7fd11c724000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libselinux.so.1"
+            },
+            {
+                "Direccion": "7fd11c726000-7fd11c728000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.5.3"
+            },
+            {
+                "Direccion": "7fd11c728000-7fd11c736000",
+                "Tamanio": 57344,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.5.3"
+            },
+            {
+                "Direccion": "7fd11c736000-7fd11c743000",
+                "Tamanio": 53248,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.5.3"
+            },
+            {
+                "Direccion": "7fd11c743000-7fd11c744000",
+                "Tamanio": 4096,
+                "Permisos": "---p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.5.3"
+            },
+            {
+                "Direccion": "7fd11c744000-7fd11c745000",
+                "Tamanio": 4096,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.5.3"
+            },
+            {
+                "Direccion": "7fd11c745000-7fd11c746000",
+                "Tamanio": 4096,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.5.3"
+            },
+            {
+                "Direccion": "7fd11c75a000-7fd11c75c000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+            },
+            {
+                "Direccion": "7fd11c75c000-7fd11c786000",
+                "Tamanio": 172032,
+                "Permisos": "r-xp",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+            },
+            {
+                "Direccion": "7fd11c786000-7fd11c791000",
+                "Tamanio": 45056,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+            },
+            {
+                "Direccion": "7fd11c792000-7fd11c794000",
+                "Tamanio": 8192,
+                "Permisos": "r--p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+            },
+            {
+                "Direccion": "7fd11c794000-7fd11c796000",
+                "Tamanio": 8192,
+                "Permisos": "rw-p",
+                "Dispositivo": "103:05",
+                "Archivo": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+            },
+            {
+                "Direccion": "7ffc46172000-7ffc46193000",
+                "Tamanio": 135168,
+                "Permisos": "rw-p",
+                "Dispositivo": "00:00",
+                "Archivo": "[stack]"
+            },
+            {
+                "Direccion": "7ffc461ba000-7ffc461be000",
+                "Tamanio": 16384,
+                "Permisos": "r--p",
+                "Dispositivo": "00:00",
+                "Archivo": "[vvar]"
+            },
+            {
+                "Direccion": "7ffc461be000-7ffc461c0000",
+                "Tamanio": 8192,
+                "Permisos": "r-xp",
+                "Dispositivo": "00:00",
+                "Archivo": "[vdso]"
+            },
+            {
+                "Direccion": "ffffffffff600000-ffffffffff601000",
+                "Tamanio": 4096,
+                "Permisos": "--xp",
+                "Dispositivo": "00:00",
+                "Archivo": "[vsyscall]"
+            }
+        ],
+        "Arr2": [
+            {
+                "Residente": 0,
+                "Virtual": 0
+            },
+            {
+                "Residente": 0,
+                "Virtual": 0
+            },
+            {
+                "Residente": 0,
+                "Virtual": 0
+            },
+            {
+                "Residente": 0,
+                "Virtual": 0
+            },
+            {
+                "Residente": 0,
+                "Virtual": 0
+            },
+            {
+                "Residente": 0,
+                "Virtual": 0
+            },
+            {
+                "Residente": 0,
+                "Virtual": 3
+            },
+            {
+                "Residente": 2,
+                "Virtual": 3
+            },
+            {
+                "Residente": 2,
+                "Virtual": 66
+            },
+            {
+                "Residente": 2,
+                "Virtual": 66
+            },
+            {
+                "Residente": 2,
+                "Virtual": 129
+            },
+            {
+                "Residente": 2,
+                "Virtual": 129
+            },
+            {
+                "Residente": 2,
+                "Virtual": 137
+            },
+            {
+                "Residente": 2,
+                "Virtual": 137
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 145
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 147
+            },
+            {
+                "Residente": 2,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 148
+            },
+            {
+                "Residente": 3,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            },
+            {
+                "Residente": 4,
+                "Virtual": 149
+            }
+        ]
+    }
+]

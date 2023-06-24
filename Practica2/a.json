@@ -1,0 +1,179 @@
+{
+    "cpu_usage":0 , 
+    "data": [{"id": "0_systemd","pid": 1, "nombre": "systemd", "usuario": "0", "estado": "suspendido", "ram": 257, 
+    "procesoshijos": [{"pid": 199, "nombre": "systemd-journal", "usuario": "0", "estado": "suspendido", "ram": 725},{"pid": 217, "nombre": "systemd-udevd", "usuario": "0", "estado": "suspendido", "ram": 130},{"pid": 326, "nombre": "haveged", "usuario": "0", "estado": "suspendido", "ram": 127},{"pid": 351, "nombre": "dbus-daemon", "usuario": "105", "estado": "suspendido", "ram": 113},{"pid": 358, "nombre": "rsyslogd", "usuario": "0", "estado": "suspendido", "ram": 112},{"pid": 350, "nombre": "dhclient", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 466, "nombre": "dhclient", "usuario": "0", "estado": "suspendido", "ram": 195},{"pid": 518, "nombre": "google_guest_ag", "usuario": "0", "estado": "suspendido", "ram": 560},{"pid": 519, "nombre": "google_osconfig", "usuario": "0", "estado": "suspendido", "ram": 741},{"pid": 525, "nombre": "unattended-upgr", "usuario": "0", "estado": "suspendido", "ram": 443},{"pid": 533, "nombre": "agetty", "usuario": "0", "estado": "suspendido", "ram": 44},{"pid": 536, "nombre": "agetty", "usuario": "0", "estado": "suspendido", "ram": 55},{"pid": 538, "nombre": "chronyd", "usuario": "107", "estado": "suspendido", "ram": 95},{"pid": 874, "nombre": "sshd", "usuario": "0", "estado": "suspendido", "ram": 191},{"pid": 891, "nombre": "systemd-logind", "usuario": "0", "estado": "suspendido", "ram": 178},{"pid": 894, "nombre": "exim4", "usuario": "101", "estado": "suspendido", "ram": 75},{"pid": 900, "nombre": "cron", "usuario": "0", "estado": "suspendido", "ram": 69},{"pid": 924, "nombre": "systemd", "usuario": "1000", "estado": "suspendido", "ram": 193}]
+    },{"id": "1_kthreadd","pid": 2, "nombre": "kthreadd", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": [{"pid": 3, "nombre": "rcu_gp", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 4, "nombre": "rcu_par_gp", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 5, "nombre": "kworker/0:0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 6, "nombre": "kworker/0:0H", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 8, "nombre": "mm_percpu_wq", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 9, "nombre": "rcu_tasks_rude_", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 10, "nombre": "rcu_tasks_trace", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 11, "nombre": "ksoftirqd/0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 12, "nombre": "rcu_sched", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 13, "nombre": "migration/0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 15, "nombre": "cpuhp/0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 16, "nombre": "cpuhp/1", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 17, "nombre": "migration/1", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 18, "nombre": "ksoftirqd/1", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 20, "nombre": "kworker/1:0H", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 22, "nombre": "kworker/u4:1", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 23, "nombre": "kdevtmpfs", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 24, "nombre": "netns", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 25, "nombre": "kauditd", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 27, "nombre": "khungtaskd", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 28, "nombre": "oom_reaper", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 29, "nombre": "writeback", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 30, "nombre": "kcompactd0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 31, "nombre": "ksmd", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 32, "nombre": "khugepaged", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 51, "nombre": "kintegrityd", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 52, "nombre": "kblockd", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 53, "nombre": "blkcg_punt_bio", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 54, "nombre": "kworker/0:1H", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 55, "nombre": "kswapd0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 56, "nombre": "kthrotld", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 57, "nombre": "acpi_thermal_pm", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 58, "nombre": "nvme-wq", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 59, "nombre": "nvme-reset-wq", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 60, "nombre": "nvme-delete-wq", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 61, "nombre": "ipv6_addrconf", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 71, "nombre": "kstrp", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 76, "nombre": "kworker/u5:0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 120, "nombre": "kworker/1:1H", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 123, "nombre": "scsi_eh_0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 124, "nombre": "scsi_tmf_0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 163, "nombre": "jbd2/sda1-8", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 164, "nombre": "ext4-rsv-conver", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 175, "nombre": "hwrng", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 204, "nombre": "kworker/u4:3", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 231, "nombre": "tpm_dev_wq", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 253, "nombre": "cryptd", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 2194, "nombre": "kworker/0:1", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 2820, "nombre": "kworker/1:0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 4039, "nombre": "kworker/u4:0", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 4053, "nombre": "kworker/1:1", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 5285, "nombre": "kworker/0:2", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 5288, "nombre": "kworker/u4:2", "usuario": "0", "estado": "suspendido", "ram": 193},{"pid": 5917, "nombre": "kworker/1:2", "usuario": "0", "estado": "suspendido", "ram": 193}]
+    },{"id": "2_rcu_gp","pid": 3, "nombre": "rcu_gp", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "3_rcu_par_gp","pid": 4, "nombre": "rcu_par_gp", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "4_kworker/0:0","pid": 5, "nombre": "kworker/0:0", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "5_kworker/0:0H","pid": 6, "nombre": "kworker/0:0H", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "6_mm_percpu_wq","pid": 8, "nombre": "mm_percpu_wq", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "7_rcu_tasks_rude_","pid": 9, "nombre": "rcu_tasks_rude_", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "8_rcu_tasks_trace","pid": 10, "nombre": "rcu_tasks_trace", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "9_ksoftirqd/0","pid": 11, "nombre": "ksoftirqd/0", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "10_rcu_sched","pid": 12, "nombre": "rcu_sched", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "11_migration/0","pid": 13, "nombre": "migration/0", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "12_cpuhp/0","pid": 15, "nombre": "cpuhp/0", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "13_cpuhp/1","pid": 16, "nombre": "cpuhp/1", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "14_migration/1","pid": 17, "nombre": "migration/1", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "15_ksoftirqd/1","pid": 18, "nombre": "ksoftirqd/1", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "16_kworker/1:0H","pid": 20, "nombre": "kworker/1:0H", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "17_kworker/u4:1","pid": 22, "nombre": "kworker/u4:1", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "18_kdevtmpfs","pid": 23, "nombre": "kdevtmpfs", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "19_netns","pid": 24, "nombre": "netns", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "20_kauditd","pid": 25, "nombre": "kauditd", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "21_khungtaskd","pid": 27, "nombre": "khungtaskd", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "22_oom_reaper","pid": 28, "nombre": "oom_reaper", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "23_writeback","pid": 29, "nombre": "writeback", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "24_kcompactd0","pid": 30, "nombre": "kcompactd0", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "25_ksmd","pid": 31, "nombre": "ksmd", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "26_khugepaged","pid": 32, "nombre": "khugepaged", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "27_kintegrityd","pid": 51, "nombre": "kintegrityd", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "28_kblockd","pid": 52, "nombre": "kblockd", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "29_blkcg_punt_bio","pid": 53, "nombre": "blkcg_punt_bio", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "30_kworker/0:1H","pid": 54, "nombre": "kworker/0:1H", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "31_kswapd0","pid": 55, "nombre": "kswapd0", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "32_kthrotld","pid": 56, "nombre": "kthrotld", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "33_acpi_thermal_pm","pid": 57, "nombre": "acpi_thermal_pm", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "34_nvme-wq","pid": 58, "nombre": "nvme-wq", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "35_nvme-reset-wq","pid": 59, "nombre": "nvme-reset-wq", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "36_nvme-delete-wq","pid": 60, "nombre": "nvme-delete-wq", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "37_ipv6_addrconf","pid": 61, "nombre": "ipv6_addrconf", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "38_kstrp","pid": 71, "nombre": "kstrp", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "39_kworker/u5:0","pid": 76, "nombre": "kworker/u5:0", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "40_kworker/1:1H","pid": 120, "nombre": "kworker/1:1H", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "41_scsi_eh_0","pid": 123, "nombre": "scsi_eh_0", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "42_scsi_tmf_0","pid": 124, "nombre": "scsi_tmf_0", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "43_jbd2/sda1-8","pid": 163, "nombre": "jbd2/sda1-8", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "44_ext4-rsv-conver","pid": 164, "nombre": "ext4-rsv-conver", "usuario": "0", "estado": "ejecucion", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "45_hwrng","pid": 175, "nombre": "hwrng", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "46_systemd-journal","pid": 199, "nombre": "systemd-journal", "usuario": "0", "estado": "suspendido", "ram": 725, 
+    "procesoshijos": []
+    },{"id": "47_kworker/u4:3","pid": 204, "nombre": "kworker/u4:3", "usuario": "0", "estado": "ejecucion", "ram": 725, 
+    "procesoshijos": []
+    },{"id": "48_systemd-udevd","pid": 217, "nombre": "systemd-udevd", "usuario": "0", "estado": "suspendido", "ram": 130, 
+    "procesoshijos": [{"pid": 5938, "nombre": "systemd-udevd", "usuario": "0", "estado": "suspendido", "ram": 69}]
+    },{"id": "49_tpm_dev_wq","pid": 231, "nombre": "tpm_dev_wq", "usuario": "0", "estado": "ejecucion", "ram": 69, 
+    "procesoshijos": []
+    },{"id": "50_cryptd","pid": 253, "nombre": "cryptd", "usuario": "0", "estado": "ejecucion", "ram": 69, 
+    "procesoshijos": []
+    },{"id": "51_haveged","pid": 326, "nombre": "haveged", "usuario": "0", "estado": "suspendido", "ram": 127, 
+    "procesoshijos": []
+    },{"id": "52_dhclient","pid": 350, "nombre": "dhclient", "usuario": "0", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": []
+    },{"id": "53_dbus-daemon","pid": 351, "nombre": "dbus-daemon", "usuario": "105", "estado": "suspendido", "ram": 113, 
+    "procesoshijos": []
+    },{"id": "54_rsyslogd","pid": 358, "nombre": "rsyslogd", "usuario": "0", "estado": "suspendido", "ram": 112, 
+    "procesoshijos": []
+    },{"id": "55_dhclient","pid": 466, "nombre": "dhclient", "usuario": "0", "estado": "suspendido", "ram": 195, 
+    "procesoshijos": []
+    },{"id": "56_google_guest_ag","pid": 518, "nombre": "google_guest_ag", "usuario": "0", "estado": "suspendido", "ram": 560, 
+    "procesoshijos": []
+    },{"id": "57_google_osconfig","pid": 519, "nombre": "google_osconfig", "usuario": "0", "estado": "suspendido", "ram": 741, 
+    "procesoshijos": []
+    },{"id": "58_unattended-upgr","pid": 525, "nombre": "unattended-upgr", "usuario": "0", "estado": "suspendido", "ram": 443, 
+    "procesoshijos": []
+    },{"id": "59_agetty","pid": 533, "nombre": "agetty", "usuario": "0", "estado": "suspendido", "ram": 44, 
+    "procesoshijos": []
+    },{"id": "60_agetty","pid": 536, "nombre": "agetty", "usuario": "0", "estado": "suspendido", "ram": 55, 
+    "procesoshijos": []
+    },{"id": "61_chronyd","pid": 538, "nombre": "chronyd", "usuario": "107", "estado": "suspendido", "ram": 95, 
+    "procesoshijos": [{"pid": 539, "nombre": "chronyd", "usuario": "107", "estado": "suspendido", "ram": 13}]
+    },{"id": "62_chronyd","pid": 539, "nombre": "chronyd", "usuario": "107", "estado": "suspendido", "ram": 13, 
+    "procesoshijos": []
+    },{"id": "63_sshd","pid": 874, "nombre": "sshd", "usuario": "0", "estado": "suspendido", "ram": 191, 
+    "procesoshijos": [{"pid": 921, "nombre": "sshd", "usuario": "0", "estado": "suspendido", "ram": 222},{"pid": 2207, "nombre": "sshd", "usuario": "0", "estado": "suspendido", "ram": 221}]
+    },{"id": "64_systemd-logind","pid": 891, "nombre": "systemd-logind", "usuario": "0", "estado": "suspendido", "ram": 178, 
+    "procesoshijos": []
+    },{"id": "65_exim4","pid": 894, "nombre": "exim4", "usuario": "101", "estado": "suspendido", "ram": 75, 
+    "procesoshijos": []
+    },{"id": "66_cron","pid": 900, "nombre": "cron", "usuario": "0", "estado": "suspendido", "ram": 69, 
+    "procesoshijos": []
+    },{"id": "67_sshd","pid": 921, "nombre": "sshd", "usuario": "0", "estado": "suspendido", "ram": 222, 
+    "procesoshijos": [{"pid": 943, "nombre": "sshd", "usuario": "1000", "estado": "suspendido", "ram": 144}]
+    },{"id": "68_systemd","pid": 924, "nombre": "systemd", "usuario": "1000", "estado": "suspendido", "ram": 193, 
+    "procesoshijos": [{"pid": 925, "nombre": "(sd-pam)", "usuario": "1000", "estado": "suspendido", "ram": 69}]
+    },{"id": "69_(sd-pam)","pid": 925, "nombre": "(sd-pam)", "usuario": "1000", "estado": "suspendido", "ram": 69, 
+    "procesoshijos": []
+    },{"id": "70_sshd","pid": 943, "nombre": "sshd", "usuario": "1000", "estado": "suspendido", "ram": 144, 
+    "procesoshijos": [{"pid": 944, "nombre": "bash", "usuario": "1000", "estado": "suspendido", "ram": 125}]
+    },{"id": "71_bash","pid": 944, "nombre": "bash", "usuario": "1000", "estado": "suspendido", "ram": 125, 
+    "procesoshijos": [{"pid": 5934, "nombre": "bash", "usuario": "1000", "estado": "suspendido", "ram": 86}]
+    },{"id": "72_kworker/0:1","pid": 2194, "nombre": "kworker/0:1", "usuario": "0", "estado": "ejecucion", "ram": 86, 
+    "procesoshijos": []
+    },{"id": "73_sshd","pid": 2207, "nombre": "sshd", "usuario": "0", "estado": "suspendido", "ram": 221, 
+    "procesoshijos": [{"pid": 2214, "nombre": "sshd", "usuario": "1000", "estado": "suspendido", "ram": 148}]
+    },{"id": "74_sshd","pid": 2214, "nombre": "sshd", "usuario": "1000", "estado": "suspendido", "ram": 148, 
+    "procesoshijos": [{"pid": 2215, "nombre": "bash", "usuario": "1000", "estado": "suspendido", "ram": 126}]
+    },{"id": "75_bash","pid": 2215, "nombre": "bash", "usuario": "1000", "estado": "suspendido", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "76_kworker/1:0","pid": 2820, "nombre": "kworker/1:0", "usuario": "0", "estado": "ejecucion", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "77_kworker/u4:0","pid": 4039, "nombre": "kworker/u4:0", "usuario": "0", "estado": "ejecucion", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "78_kworker/1:1","pid": 4053, "nombre": "kworker/1:1", "usuario": "0", "estado": "ejecucion", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "79_kworker/0:2","pid": 5285, "nombre": "kworker/0:2", "usuario": "0", "estado": "ejecucion", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "80_kworker/u4:2","pid": 5288, "nombre": "kworker/u4:2", "usuario": "0", "estado": "ejecucion", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "81_kworker/1:2","pid": 5917, "nombre": "kworker/1:2", "usuario": "0", "estado": "ejecucion", "ram": 126, 
+    "procesoshijos": []
+    },{"id": "82_bash","pid": 5934, "nombre": "bash", "usuario": "1000", "estado": "suspendido", "ram": 86, 
+    "procesoshijos": [{"pid": 6532, "nombre": "cat", "usuario": "1000", "estado": "suspendido", "ram": 14}]
+    },{"id": "83_systemd-udevd","pid": 5938, "nombre": "systemd-udevd", "usuario": "0", "estado": "suspendido", "ram": 69, 
+    "procesoshijos": []
+    },{"id": "84_cat","pid": 6532, "nombre": "cat", "usuario": "1000", "estado": "ejecucion", "ram": 14, 
+    "procesoshijos": []
+    }], 
+    "ejecucion":36 , 
+    "zombie":0 , 
+    "detenido":0 , 
+    "suspendido":49 , 
+    "totales":85  
+    }
